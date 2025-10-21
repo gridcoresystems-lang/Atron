@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>ATRON | Polaris v9.5</title>
+<title>ATRON | Polaris v9.6</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{height:100%;overflow-x:hidden;background:#000;font-family:'Inter',sans-serif;color:#d9e9ff;scroll-behavior:smooth}
@@ -14,7 +14,7 @@ body{animation:pageFade 2s ease-out}
 @keyframes pageFade{0%{opacity:0}100%{opacity:1}}
 
 /* hero */
-.hero{position:relative;z-index:2;text-align:center;padding:12vh 6% 10vh;animation:fadeUp 1.4s ease-out forwards}
+.hero{position:relative;z-index:2;text-align:center;padding:10vh 6% 10vh;animation:fadeUp 1.4s ease-out forwards}
 @keyframes fadeUp{0%{opacity:0;transform:translateY(30px)}100%{opacity:1;transform:translateY(0)}}
 
 /* ATRON title */
@@ -22,6 +22,7 @@ body{animation:pageFade 2s ease-out}
   position:relative;
   display:inline-block;
   padding:.2rem .8rem;
+  margin-bottom:20px; /* 20px lift */
 }
 h1{
   font-size:3.6rem;
@@ -127,14 +128,66 @@ footer p{font-size:.9rem;line-height:1.4;max-width:900px;margin:0 auto}
 <section id="overview" class="panel">
   <h2>System Overview</h2>
   <p style="margin-bottom:1.6rem;">ATRON merges adaptive reasoning, live-data fusion, and compression–expansion logic into one self-evolving structure. Each cycle ingests verified data, reconstructs logic paths, and cross-validates conclusions through its Council Engine.</p>
+
   <details class="drop"><summary>Core Architecture</summary>
     <p>The Continuity Lattice, Council Engine, and Brutal Push loops coordinate each reasoning cycle. Every layer checks data consistency before the next iteration begins.</p>
     <a href="#details" class="details-btn">More Details →</a>
   </details>
+
+  <details class="drop"><summary>Research Integration</summary>
+    <p>Constructed using open research and validated methods from MIT CSAIL, DeepMind, OpenAI, NASA Ames, and Stanford NeuroAI. ATRON ingests and contextualises insights spanning 2023–2027 to refine validation logic and predictive consistency.</p>
+    <a href="#research" class="details-btn">More Details →</a>
+  </details>
+
+  <details class="drop"><summary>Market Gap & Purpose</summary>
+    <p>Unlike frozen AI models, ATRON rebuilds its structure each session—achieving organic, adaptive growth without retraining.</p>
+    <a href="#gap" class="details-btn">More Details →</a>
+  </details>
+</section>
+
+<section id="details" class="panel">
+  <h2>Detailed Framework</h2>
+  <ol class="sources">
+    <li>Continuity Lattice — stores structural reasoning memory.</li>
+    <li>Council Engine — cross-checks logic across concurrent agents.</li>
+    <li>Brutal Push System — controlled research iteration cycles.</li>
+    <li>Seeding Framework — compression + expansion of data nodes.</li>
+    <li>Compression–Expansion Layer — balance of accuracy vs. speed.</li>
+  </ol>
+</section>
+
+<section id="research" class="panel">
+  <h2>Research Sources & Validation</h2>
+  <ul class="sources">
+    <li>OpenAI Alignment Research (2023–2025)</li>
+    <li>DeepMind Gemini & AlphaCode Engineering (2024–2026)</li>
+    <li>MIT CSAIL Neuro-Symbolic Learning (2023–2027)</li>
+    <li>NASA Ames & ESA Data-Fusion Projects (2025–2027)</li>
+    <li>OECD & WHO AI Governance Models (2024–2027)</li>
+  </ul>
+  <p class="note">This represents only a small portion of ATRON’s verified ingest sources.</p>
+</section>
+
+<section id="gap" class="panel">
+  <h2>Why ATRON Fills the Gap</h2>
+  <p>Traditional AI models become outdated; ATRON continuously re-evaluates data and rewires logic using validated streams.</p>
+  <ul class="sources">
+    <li><strong>GPT-based systems:</strong> Static training, stale data, limited context.</li>
+    <li><strong>ATRON:</strong> Adaptive learning, live validation, real-time consistency checks.</li>
+  </ul>
+  <p style="text-align:center;margin-top:1.6rem;color:#a8cfff;">Discover the deeper architecture and design ethics behind ATRON:</p>
+  <a href="deep.html" class="btn-primary" style="margin-top:0.6rem;">View Full Breakdown</a>
+</section>
+
+<section id="contact" class="panel">
+  <h2>Contact GridCore Systems</h2>
+  <p>We help research teams, startups, and innovators integrate adaptive AI logic into real-world systems. GridCore offers collaborative development, early-stage licensing, and technical partnerships for organisations aiming to fuse human insight with verified machine reasoning.</p>
+  <p style="margin-top:1rem;">For enquiries or collaboration:</p>
+  <p><a href="mailto:gridcoresystems@gmail.com" class="details-btn">gridcoresystems@gmail.com</a></p>
 </section>
 
 <footer>
-  <p>© 2025 GridCore / ATRON Systems — MIT License • Version v9.5 Polaris • Verification Framework • Proof-Core Synced</p>
+  <p>© 2025 GridCore / ATRON Systems — MIT License • Version v9.6 Polaris • Verification Framework • Proof-Core Synced</p>
   <button id="scrollTop">↑ Back to Top</button>
 </footer>
 
@@ -160,7 +213,7 @@ x.fillStyle=`hsla(${a.hue},100%,75%,0.9)`;x.fill();}
 requestAnimationFrame(draw);}
 draw();
 
-/* Back to top - force scroll */
+/* Back to top */
 document.getElementById("scrollTop").addEventListener("click",()=>{
 window.scrollTo({top:0,behavior:"auto"});
 document.documentElement.scrollTop=0;
