@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>ATRON | Polaris v9.6.1</title>
+<title>ATRON | Polaris v9.6.2</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{height:100%;overflow-x:hidden;background:#000;font-family:'Inter',sans-serif;color:#d9e9ff;scroll-behavior:smooth}
@@ -147,7 +147,7 @@ border-radius:8px;padding:8px 16px;font-weight:600;cursor:pointer;transition:.3s
 </section>
 
 <footer>
-  <p>© 2025 GridCore / ATRON Systems — MIT License • Version v9.6.1 Polaris • Verification Framework • Proof-Core Synced</p>
+  <p>© 2025 GridCore / ATRON Systems — MIT License • Version v9.6.2 Polaris • Verification Framework • Proof-Core Synced</p>
   <button id="scrollTop">↑ Back to Top</button>
 </footer>
 
@@ -180,9 +180,11 @@ const obs=new IntersectionObserver(es=>{
 },{threshold:.1});
 panels.forEach(p=>obs.observe(p));
 
-/* Back to top fix */
+/* Back to top — full cross-browser fix */
 document.getElementById("scrollTop").addEventListener("click",()=>{
-window.scrollTo({top:0,behavior:"smooth"});
+  window.scrollTo({top:0,behavior:"smooth"});
+  document.body.scrollTop=0;
+  document.documentElement.scrollTop=0;
 });
 </script>
 </body>
