@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ATRON | Polaris v8.4</title>
+<title>ATRON | Polaris v8.5</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{height:100%;overflow-x:hidden;background:#000;font-family:'Inter',sans-serif;color:#d9e9ff;scroll-behavior:smooth}
 
-/* mesh canvas */
+/* mesh */
 #mesh-bg{position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:0;pointer-events:none;background:#000}
 
 /* fade-in hero */
@@ -37,11 +37,9 @@ details.drop summary::marker{display:none}
 details.drop summary::after{content:"⯈";position:absolute;right:0;color:#80caff;transition:transform .3s ease,color .3s ease}
 details.drop[open] summary::after{transform:rotate(90deg);color:#bde6ff}
 details.drop p,details.drop ol{margin-top:.8rem;color:#e1efff;font-size:.96rem;line-height:1.6}
-details.drop ol{list-style:decimal inside;padding-left:.8rem}
 .details-btn{margin-top:.9rem;display:inline-block;border:1px solid rgba(120,190,255,.6);border-radius:8px;padding:8px 16px;color:#b8e2ff;font-weight:600;text-decoration:none;transition:.3s}
 .details-btn:hover{background:rgba(125,190,255,.1);box-shadow:0 0 15px rgba(90,170,255,.3)}
 
-/* lists */
 .sources{margin:1rem 0 1rem 1.2rem;list-style-type:square;color:#b6d7ff}
 .sources li{margin:.45rem 0}
 .note{color:#9cb8dd;font-size:.9rem;text-align:center;margin-top:1rem;font-style:italic}
@@ -75,19 +73,18 @@ footer p{font-size:.9rem;line-height:1.4;max-width:900px;margin:0 auto}
   </details>
 
   <details class="drop"><summary>Research Integration</summary>
-    <p>Constructed using open research and validated methods from MIT CSAIL, DeepMind, OpenAI, NASA Ames, and Stanford NeuroAI. ATRON ingests these verified studies to refine validation logic.</p>
+    <p>Constructed using open research and validated methods from MIT CSAIL, DeepMind, OpenAI, NASA Ames, and Stanford NeuroAI. ATRON ingests and contextualises insights spanning 2023 – 2027 to refine validation logic and predictive consistency.</p>
     <a href="#research" class="details-btn">More Details →</a>
   </details>
 
   <details class="drop"><summary>Market Gap & Purpose</summary>
-    <p>Unlike frozen AI models, ATRON rebuilds its structure each session—achieving organic, adaptive growth without retraining.</p>
+    <p>Unlike frozen AI models, ATRON rebuilds its structure each session — achieving organic, adaptive growth without retraining.</p>
     <a href="#gap" class="details-btn">More Details →</a>
   </details>
 </section>
 
 <section id="details" class="panel">
   <h2>Detailed Framework</h2>
-  <p>ATRON operates through five persistent subsystems:</p>
   <ol class="sources">
     <li>Continuity Lattice — stores structural reasoning memory.</li>
     <li>Council Engine — cross-checks logic across concurrent agents.</li>
@@ -100,7 +97,7 @@ footer p{font-size:.9rem;line-height:1.4;max-width:900px;margin:0 auto}
 <section id="research" class="panel">
   <h2>Research Sources & Validation</h2>
   <ul class="sources">
-    <li>OpenAI Alignment Research (2023–2025)</li>
+    <li>OpenAI Alignment Research (2023 – 2027 insights)</li>
     <li>DeepMind Gemini & AlphaCode Data</li>
     <li>MIT CSAIL Neuro-Symbolic Learning</li>
     <li>NASA Ames Data-Fusion Projects</li>
@@ -117,6 +114,8 @@ footer p{font-size:.9rem;line-height:1.4;max-width:900px;margin:0 auto}
     <li><strong>GPT-based systems:</strong> Static training, stale data, limited context.</li>
     <li><strong>ATRON:</strong> Adaptive learning, live validation, real-time consistency checks.</li>
   </ul>
+  <p style="text-align:center;margin-top:1.6rem;color:#a8cfff;">Discover the deeper architecture and design ethics behind ATRON:</p>
+  <a href="deep.html" class="btn-primary" style="margin-top:0.6rem;">View Full Breakdown</a>
 </section>
 
 <section id="contact" class="panel">
@@ -126,14 +125,17 @@ footer p{font-size:.9rem;line-height:1.4;max-width:900px;margin:0 auto}
 </section>
 
 <footer>
-  <p>© 2025 GridCore / ATRON Systems — MIT License • Status: Truth Flow Stable • Version v8.4 Polaris Final • Verification Framework • Proof-Core Synced</p>
+  <p>© 2025 GridCore / ATRON Systems — MIT License • Status: Truth Flow Stable • Version v8.5 Polaris Final • Verification Framework • Proof-Core Synced</p>
   <button id="scrollTop">↑ Back to Top</button>
 </footer>
 
 <script>
-/* faster mesh */
+/* start always at top */
+window.scrollTo(0,0);
+
+/* mesh motion */
 const c=document.getElementById("mesh-bg"),x=c.getContext("2d");
-let w,h,p=[];const N=95,D=165,S=.14;
+let w,h,p=[];const N=95,D=165,S=.15;
 function R(){w=c.width=innerWidth;h=c.height=innerHeight;p=[];
 for(let i=0;i<N;i++)p.push({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*S,vy:(Math.random()-.5)*S,hue:180+Math.random()*60});}
 addEventListener("resize",R);R();
@@ -145,8 +147,8 @@ x.fillStyle=g;x.fillRect(0,0,w,h);
 for(let i=0;i<N;i++){const a=p[i];a.x+=a.vx;a.y+=a.vy;
 if(a.x<0||a.x>w)a.vx*=-1;if(a.y<0||a.y>h)a.vy*=-1;
 for(let j=i+1;j<N;j++){const b=p[j],dx=a.x-b.x,dy=a.y-b.y,d=Math.sqrt(dx*dx+dy*dy);
-if(d<D){const o=1-d/D;x.strokeStyle=`hsla(${a.hue},90%,70%,${o*.32})`;x.lineWidth=.7;x.beginPath();x.moveTo(a.x,a.y);x.lineTo(b.x,b.y);x.stroke();}}
-const pulse=1.4+Math.sin(Date.now()/420+i)*.5;
+if(d<D){const o=1-d/D;x.strokeStyle=`hsla(${a.hue},90%,70%,${o*.35})`;x.lineWidth=.7;x.beginPath();x.moveTo(a.x,a.y);x.lineTo(b.x,b.y);x.stroke();}}
+const pulse=1.4+Math.sin(Date.now()/400+i)*.55;
 x.beginPath();x.arc(a.x,a.y,pulse,0,Math.PI*2);
 x.fillStyle=`hsla(${a.hue},100%,75%,0.85)`;x.fill();}
 requestAnimationFrame(draw);}
