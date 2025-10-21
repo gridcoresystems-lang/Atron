@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>ATRON | Polaris v8.8</title>
+<title>ATRON | Polaris v8.9</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{height:100%;overflow-x:hidden;background:#000;font-family:'Inter',sans-serif;color:#d9e9ff;scroll-behavior:smooth}
 #mesh-bg{position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:0;pointer-events:none;background:#000}
 
 /* fade intro */
-body{animation:pageFade 2.5s ease-out;}
+body{animation:pageFade 2.3s ease-out;}
 @keyframes pageFade{0%{opacity:0;}100%{opacity:1;}}
 
 /* hero */
@@ -19,22 +19,28 @@ body{animation:pageFade 2.5s ease-out;}
 
 /* ATRON title */
 h1{
-  font-size:3.6rem;
-  letter-spacing:.8px;
-  background-image:url('https://www.transparenttextures.com/patterns/carbon-fiber-v2.png');
+  font-size:3.8rem;
+  letter-spacing:.9px;
+  background:linear-gradient(90deg,#79d2ff,#c6f5ff,#e9fcff,#79d2ff);
+  background-size:300% 100%;
   -webkit-background-clip:text;
   color:transparent;
-  text-shadow:0 0 15px rgba(150,220,255,.9),0 0 30px rgba(90,160,255,.35);
+  animation:glowShift 8s linear infinite, glowPulse 4s ease-in-out infinite;
+  text-shadow:0 0 25px rgba(130,200,255,.75),0 0 55px rgba(60,140,255,.35);
   margin-bottom:.6rem;
-  animation:glowPulse 4s ease-in-out infinite;
+}
+@keyframes glowShift{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
 }
 @keyframes glowPulse{
-  0%,100%{filter:drop-shadow(0 0 10px #88ccff)}
-  50%{filter:drop-shadow(0 0 25px #66baff)}
+  0%,100%{filter:drop-shadow(0 0 10px #9fe2ff)}
+  50%{filter:drop-shadow(0 0 25px #55bbff)}
 }
 
-.subtitle{color:#a8d8ff;font-weight:600;font-size:1.15rem;margin-bottom:.6rem}
-.tagline{color:#c6e8ff;font-size:1rem;margin-top:-.2rem;margin-bottom:1rem;opacity:.85}
+.subtitle{color:#b5e3ff;font-weight:600;font-size:1.15rem;margin-bottom:.6rem}
+.tagline{color:#d6f0ff;font-size:1rem;margin-top:-.2rem;margin-bottom:1rem;opacity:.85}
 .desc{color:#bedaff;max-width:740px;margin:.8rem auto 2.4rem;line-height:1.6;font-size:1.05rem}
 .btn-primary{display:inline-block;background:linear-gradient(90deg,#0a6eff,#3ebaff);color:#fff;padding:14px 38px;border-radius:12px;font-weight:700;text-decoration:none;transition:.3s}
 .btn-primary:hover{transform:translateY(-3px);box-shadow:0 0 24px rgba(80,180,255,.45)}
@@ -49,13 +55,18 @@ box-shadow:inset 0 0 25px rgba(70,130,255,.12),0 0 40px rgba(60,130,255,.25)}
 /* section headers */
 .panel h2{
   text-align:center;
-  font-size:1.9rem;
-  color:#aee2ff;
+  font-size:2rem;
+  color:#d2f3ff;
   padding-bottom:.5rem;
   background:url('https://www.transparenttextures.com/patterns/brushed-alum.png');
   -webkit-background-clip:text;
   color:transparent;
-  text-shadow:0 0 10px rgba(120,190,255,.5);
+  text-shadow:0 0 15px rgba(140,200,255,.75);
+  animation:headerGlow 5s ease-in-out infinite;
+}
+@keyframes headerGlow{
+  0%,100%{filter:drop-shadow(0 0 8px #88cfff)}
+  50%{filter:drop-shadow(0 0 18px #b4e8ff)}
 }
 
 /* dropdowns */
@@ -181,16 +192,16 @@ footer p{font-size:.9rem;line-height:1.4;max-width:900px;margin:0 auto}
 </section>
 
 <footer>
-  <p>© 2025 GridCore / ATRON Systems — MIT License • Status: Truth Flow Stable • Version v8.8 Polaris • Verification Framework • Proof-Core Synced</p>
+  <p>© 2025 GridCore / ATRON Systems — MIT License • Status: Truth Flow Stable • Version v8.9 Polaris • Verification Framework • Proof-Core Synced</p>
   <button id="scrollTop">↑ Back to Top</button>
 </footer>
 
 <script>
-window.scrollTo(0,0);
+window.onload = ()=>window.scrollTo(0,0);
 
 /* background mesh */
 const c=document.getElementById("mesh-bg"),x=c.getContext("2d");
-let w,h,p=[];const N=95,D=165,S=.22;
+let w,h,p=[];const N=95,D=165,S=.25;
 function R(){w=c.width=innerWidth;h=c.height=innerHeight;p=[];
 for(let i=0;i<N;i++)p.push({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*S,vy:(Math.random()-.5)*S,hue:180+Math.random()*60});}
 addEventListener("resize",R);R();
@@ -209,8 +220,8 @@ x.fillStyle=`hsla(${a.hue},100%,75%,0.85)`;x.fill();}
 requestAnimationFrame(draw);}
 draw();
 
-/* back to top */
-document.getElementById("scrollTop").addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}));
+/* fixed scroll to top */
+document.getElementById("scrollTop").onclick=()=>{window.scrollTo({top:0,behavior:"smooth"});}
 </script>
 </body>
 </html>
