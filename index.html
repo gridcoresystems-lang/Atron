@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>ATRON | Polaris v9.2 IntroLock Precision</title>
+<title>ATRON | Polaris v9.3 TopLock Enhancement</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{height:100%;overflow-x:hidden;background:#000;
@@ -21,10 +21,33 @@ transition:opacity 1.2s ease-out,transform 1.2s ease-out}
 
 /* hero */
 .hero{position:relative;z-index:2;text-align:center;padding:12vh 6% 10vh}
-h1{font-size:3.6rem;letter-spacing:.8px;color:#e9f6ff;
-text-shadow:0 0 12px rgba(150,220,255,.8),0 0 25px rgba(90,160,255,.35);
-margin-bottom:.6rem;border-bottom:2px solid rgba(120,190,255,.25);
-display:inline-block;padding-bottom:.4rem}
+h1{
+  font-size:3.8rem;
+  letter-spacing:1px;
+  color:#e9f6ff;
+  text-shadow:0 0 25px rgba(90,180,255,.7),0 0 45px rgba(0,160,255,.4);
+  margin-bottom:.6rem;
+  position:relative;
+  display:inline-block;
+  padding:0.4rem 1.2rem;
+  border:2px solid rgba(100,180,255,.35);
+  border-radius:18px;
+  background:radial-gradient(circle at top,#001122 0%,transparent 100%);
+  overflow:hidden;
+}
+h1::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:inherit;
+  border:2px solid rgba(100,180,255,.4);
+  box-shadow:0 0 25px rgba(100,180,255,.3);
+  animation:glow 4s linear infinite;
+}
+@keyframes glow{
+  0%,100%{box-shadow:0 0 20px rgba(120,200,255,.2);}
+  50%{box-shadow:0 0 40px rgba(120,200,255,.5);}
+}
 .subtitle{color:#a8d8ff;font-weight:600;font-size:1.1rem;margin-bottom:.6rem}
 .desc{color:#bedaff;max-width:720px;margin:.8rem auto 2.4rem;
 line-height:1.6;font-size:1.05rem}
@@ -86,7 +109,7 @@ box-shadow:0 0 15px rgba(90,160,255,.25)}
 
 <section id="overview" class="panel fade-up">
   <h2>System Overview</h2>
-  <p style="margin-bottom:1.6rem;">ATRON combines adaptive reasoning, live-data fusion, and compression–expansion logic into a continuously evolving structure. Each cycle ingests verified data, reconstructs logic paths, and cross-validates conclusions through its Council Engine.</p>
+  <p style="margin-bottom:1.6rem;">ATRON merges adaptive reasoning, live-data fusion, and compression–expansion logic into one evolving structure. Each cycle ingests verified data, reconstructs logic paths, and cross-validates conclusions through its Council Engine.</p>
 
   <details class="drop"><summary>Core Architecture</summary>
     <p>The Continuity Lattice, Council Engine, and Brutal Push loops coordinate each reasoning cycle. Every layer checks data consistency before the next begins.</p>
@@ -94,7 +117,7 @@ box-shadow:0 0 15px rgba(90,160,255,.25)}
   </details>
 
   <details class="drop"><summary>Research Integration</summary>
-    <p>Built from validated frameworks developed across 2023–2027 by leading research institutions including MIT CSAIL, DeepMind, OpenAI, NASA Ames, Oxford Internet Institute, Stanford NeuroAI, and ETH Zürich.</p>
+    <p>Built from validated frameworks developed 2023–2027 across institutions including MIT CSAIL, DeepMind, OpenAI, NASA Ames, Oxford Internet Institute, Stanford NeuroAI, and ETH Zürich.</p>
     <a href="#research" class="details-btn">More Details →</a>
   </details>
 
@@ -118,23 +141,23 @@ box-shadow:0 0 15px rgba(90,160,255,.25)}
 <section id="research" class="panel fade-up">
   <h2>Research Sources & Validation</h2>
   <ul class="sources">
-    <li><strong>OpenAI (2023–2025):</strong> Alignment and reasoning protocols used to train cross-verification systems.</li>
-    <li><strong>DeepMind:</strong> Gemini and AlphaCode architectures for complex logical decomposition.</li>
-    <li><strong>MIT CSAIL:</strong> Neuro-symbolic models for data reasoning consistency.</li>
-    <li><strong>NASA Ames:</strong> Multi-agent collaboration models and data fusion simulations.</li>
-    <li><strong>Oxford Internet Institute:</strong> AI governance and transparency research.</li>
-    <li><strong>ETH Zürich AI Center:</strong> Probabilistic graph-based logic flow testing.</li>
-    <li><strong>2025–2027 Insights:</strong> OECD AI Policy Observatory, WHO Digital Ethics, Google Brain interpretability frameworks, and EU AI Regulation impact analysis.</li>
+    <li><strong>OpenAI (2023–2025):</strong> Alignment and reasoning frameworks powering contextual validation.</li>
+    <li><strong>DeepMind:</strong> Gemini & AlphaCode architectures for dynamic logic decomposition.</li>
+    <li><strong>MIT CSAIL:</strong> Neuro-symbolic models improving structural interpretability.</li>
+    <li><strong>NASA Ames:</strong> Multi-agent fusion and systems verification simulations.</li>
+    <li><strong>Oxford Internet Institute:</strong> Governance and explainability ethics studies.</li>
+    <li><strong>ETH Zürich AI Center:</strong> Probabilistic logic flow and integrity modelling.</li>
+    <li><strong>2025–2027 Insights:</strong> OECD AI Policy Observatory, WHO Digital Ethics, EU AI Act alignment analysis, Google Brain interpretability updates.</li>
   </ul>
-  <p class="note">Each source informs ATRON’s evolving verification core and decision-validity metrics.</p>
+  <p class="note">Each informs ATRON’s verification core and decision-validity calibration system.</p>
 </section>
 
 <section id="gap" class="panel fade-up">
   <h2>Why ATRON Fills the Gap</h2>
-  <p>Traditional AI models degrade as their data ages; ATRON continuously re-evaluates, integrating verified research while maintaining internal logic precision.</p>
+  <p>Traditional AI models degrade as their data ages; ATRON continuously re-evaluates, integrating verified research while maintaining logic precision.</p>
   <ul class="sources">
-    <li><strong>GPT-based systems:</strong> Static training, stale data, limited context awareness.</li>
-    <li><strong>ATRON:</strong> Adaptive validation, live logic rewiring, persistent truth-tracking consistency.</li>
+    <li><strong>GPT-based systems:</strong> Static training, stale data, limited contextual range.</li>
+    <li><strong>ATRON:</strong> Adaptive reasoning, live logic rewiring, persistent validation integrity.</li>
   </ul>
   <p style="text-align:center;margin-top:1.6rem;color:#a8cfff;">Discover the architecture and design ethics behind ATRON:</p>
   <a href="deep.html" class="btn-primary" style="margin-top:.6rem;">View Full Breakdown</a>
@@ -142,28 +165,25 @@ box-shadow:0 0 15px rgba(90,160,255,.25)}
 
 <section id="contact" class="panel fade-up">
   <h2>Contact GridCore Systems</h2>
-  <p>We help research teams and innovators integrate adaptive AI logic into real systems. GridCore offers collaboration, technical licensing, and reasoning framework support.</p>
+  <p>We help research teams and innovators integrate adaptive AI logic into live systems. GridCore offers collaboration, licensing, and framework support.</p>
   <p style="margin-top:1rem;">For enquiries or collaboration:</p>
   <p><a href="mailto:gridcoresystems@gmail.com" class="details-btn">gridcoresystems@gmail.com</a></p>
 </section>
 
 <footer>
-  <p>© 2025 GridCore / ATRON Systems — MIT License • Status: Truth Flow Stable • Version v9.2 Polaris • Verification Framework • Proof-Core Synced</p>
+  <p>© 2025 GridCore / ATRON Systems — MIT License • Status: Truth Flow Stable • Version v9.3 Polaris • Verification Framework • Proof-Core Synced</p>
   <button id="scrollTop">↑ Back to Top</button>
 </footer>
 
 <script>
-/* lock start at top, fade intro */
-window.history.scrollRestoration="manual";
+/* always start at top */
+window.addEventListener("pageshow",()=>window.scrollTo(0,0));
 window.addEventListener("beforeunload",()=>window.scrollTo(0,0));
-window.addEventListener("load",()=>{
-  window.scrollTo(0,0);
-  document.querySelector(".hero").classList.add("hero-intro");
-});
+document.addEventListener("DOMContentLoaded",()=>window.scrollTo({top:0,behavior:"instant"}));
 
 /* mesh background */
 const c=document.getElementById("mesh-bg"),x=c.getContext("2d");
-let w,h,p=[];const N=95,D=165,S=.6;
+let w,h,p=[];const N=95,D=165,S=.8;
 function R(){w=c.width=innerWidth;h=c.height=innerHeight;p=[];
 for(let i=0;i<N;i++)p.push({x:Math.random()*w,y:Math.random()*h,
 vx:(Math.random()-.5)*S,vy:(Math.random()-.5)*S,
@@ -180,10 +200,10 @@ for(let i=0;i<N;i++){
  for(let j=i+1;j<N;j++){
    const b=p[j],dx=a.x-b.x,dy=a.y-b.y,d=Math.sqrt(dx*dx+dy*dy);
    if(d<D){const o=1-d/D;
-     x.strokeStyle=`hsla(${a.hue},90%,70%,${o*.4})`;
-     x.lineWidth=.8;x.beginPath();x.moveTo(a.x,a.y);
+     x.strokeStyle=`hsla(${a.hue},90%,70%,${o*.45})`;
+     x.lineWidth=.9;x.beginPath();x.moveTo(a.x,a.y);
      x.lineTo(b.x,b.y);x.stroke();}}
- const pulse=1.6+Math.sin(Date.now()/300+i)*.6;
+ const pulse=1.7+Math.sin(Date.now()/250+i)*.6;
  x.beginPath();x.arc(a.x,a.y,pulse,0,Math.PI*2);
  x.fillStyle=`hsla(${a.hue},100%,75%,0.9)`;x.fill();}
 requestAnimationFrame(draw);}
@@ -195,11 +215,11 @@ entries.forEach(e=>e.target.classList.toggle("visible",e.isIntersecting));
 },{threshold:0.15});
 document.querySelectorAll(".fade-up").forEach(el=>observer.observe(el));
 
-/* reliable back-to-top */
-document.getElementById("scrollTop").addEventListener("click",e=>{
- e.preventDefault();
- window.scrollTo({top:0,behavior:"smooth"});
-});
+/* universal back to top */
+const topBtn=document.getElementById("scrollTop");
+function scrollTopFn(e){e.preventDefault();window.scrollTo({top:0,behavior:"smooth"});}
+topBtn.addEventListener("click",scrollTopFn);
+topBtn.addEventListener("touchstart",scrollTopFn);
 </script>
 </body>
 </html>
