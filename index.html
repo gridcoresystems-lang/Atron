@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ATRON | Polaris v8.3</title>
+<title>ATRON | Polaris v8.4</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{height:100%;overflow-x:hidden;background:#000;font-family:'Inter',sans-serif;color:#d9e9ff;scroll-behavior:smooth}
@@ -47,7 +47,8 @@ details.drop ol{list-style:decimal inside;padding-left:.8rem}
 .note{color:#9cb8dd;font-size:.9rem;text-align:center;margin-top:1rem;font-style:italic}
 
 /* footer */
-footer{text-align:center;padding:3rem 1rem;color:#a4c4ff;border-top:1px solid rgba(120,160,255,.25);background:rgba(0,0,0,.8)}
+footer{text-align:center;padding:3rem 1rem 4rem;color:#a4c4ff;border-top:1px solid rgba(120,160,255,.25);background:rgba(0,0,0,.85);z-index:2;position:relative}
+footer p{font-size:.9rem;line-height:1.4;max-width:900px;margin:0 auto}
 #scrollTop{margin-top:1rem;border:1px solid #7dc9ff;background:transparent;color:#7dc9ff;border-radius:8px;padding:8px 16px;font-weight:600;cursor:pointer;transition:.3s}
 #scrollTop:hover{background:rgba(125,201,255,.1);box-shadow:0 0 15px rgba(90,160,255,.25)}
 
@@ -125,14 +126,14 @@ footer{text-align:center;padding:3rem 1rem;color:#a4c4ff;border-top:1px solid rg
 </section>
 
 <footer>
-  <p>© 2025 GridCore / ATRON Systems — MIT License • Status: Truth Flow Stable • Version v8.3 Polaris Final • Verification Framework • Proof-Core Synced</p>
+  <p>© 2025 GridCore / ATRON Systems — MIT License • Status: Truth Flow Stable • Version v8.4 Polaris Final • Verification Framework • Proof-Core Synced</p>
   <button id="scrollTop">↑ Back to Top</button>
 </footer>
 
 <script>
-/* enhanced mesh background */
+/* faster mesh */
 const c=document.getElementById("mesh-bg"),x=c.getContext("2d");
-let w,h,p=[];const N=90,D=160,S=.09;
+let w,h,p=[];const N=95,D=165,S=.14;
 function R(){w=c.width=innerWidth;h=c.height=innerHeight;p=[];
 for(let i=0;i<N;i++)p.push({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*S,vy:(Math.random()-.5)*S,hue:180+Math.random()*60});}
 addEventListener("resize",R);R();
@@ -144,8 +145,8 @@ x.fillStyle=g;x.fillRect(0,0,w,h);
 for(let i=0;i<N;i++){const a=p[i];a.x+=a.vx;a.y+=a.vy;
 if(a.x<0||a.x>w)a.vx*=-1;if(a.y<0||a.y>h)a.vy*=-1;
 for(let j=i+1;j<N;j++){const b=p[j],dx=a.x-b.x,dy=a.y-b.y,d=Math.sqrt(dx*dx+dy*dy);
-if(d<D){const o=1-d/D;x.strokeStyle=`hsla(${a.hue},90%,70%,${o*.3})`;x.lineWidth=.7;x.beginPath();x.moveTo(a.x,a.y);x.lineTo(b.x,b.y);x.stroke();}}
-const pulse=1.4+Math.sin(Date.now()/500+i)*.45;
+if(d<D){const o=1-d/D;x.strokeStyle=`hsla(${a.hue},90%,70%,${o*.32})`;x.lineWidth=.7;x.beginPath();x.moveTo(a.x,a.y);x.lineTo(b.x,b.y);x.stroke();}}
+const pulse=1.4+Math.sin(Date.now()/420+i)*.5;
 x.beginPath();x.arc(a.x,a.y,pulse,0,Math.PI*2);
 x.fillStyle=`hsla(${a.hue},100%,75%,0.85)`;x.fill();}
 requestAnimationFrame(draw);}
