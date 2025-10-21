@@ -3,47 +3,27 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>ATRON | Polaris v9.6</title>
+<title>ATRON | Polaris v9.6.1</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{height:100%;overflow-x:hidden;background:#000;font-family:'Inter',sans-serif;color:#d9e9ff;scroll-behavior:smooth}
 #mesh-bg{position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:0;pointer-events:none;background:#000}
-
-/* fade intro */
-body{animation:pageFade 2s ease-out}
-@keyframes pageFade{0%{opacity:0}100%{opacity:1}}
+body{animation:pageFade 2s ease-out}@keyframes pageFade{0%{opacity:0}100%{opacity:1}}
 
 /* hero */
 .hero{position:relative;z-index:2;text-align:center;padding:10vh 6% 10vh;animation:fadeUp 1.4s ease-out forwards}
 @keyframes fadeUp{0%{opacity:0;transform:translateY(30px)}100%{opacity:1;transform:translateY(0)}}
 
 /* ATRON title */
-.title-wrap{
-  position:relative;
-  display:inline-block;
-  padding:.2rem .8rem;
-  margin-bottom:20px; /* 20px lift */
-}
-h1{
-  font-size:3.6rem;
-  font-weight:800;
-  letter-spacing:.8px;
-  color:#bfeaff;
-  text-shadow:0 0 14px rgba(120,200,255,.8),0 0 30px rgba(70,150,255,.35);
-}
+.title-wrap{position:relative;display:inline-block;padding:.2rem .8rem;margin-bottom:20px}
+h1{font-size:3.6rem;font-weight:800;letter-spacing:.8px;color:#bfeaff;text-shadow:0 0 14px rgba(120,200,255,.8),0 0 30px rgba(70,150,255,.35)}
 .title-wrap::before{
-  content:"";
-  position:absolute;
-  top:-6px;left:-14px;right:-14px;bottom:-6px;
-  border-radius:16px;
-  border:3px solid rgba(45,95,150,.9);
-  box-shadow:0 0 10px rgba(45,95,150,.7),inset 0 0 6px rgba(60,130,200,.3);
-  animation:borderPulse 4s ease-in-out infinite;
-}
-@keyframes borderPulse{
-  0%,100%{box-shadow:0 0 10px rgba(45,95,150,.7),inset 0 0 6px rgba(60,130,200,.3);}
-  50%{box-shadow:0 0 18px rgba(80,160,255,.9),inset 0 0 10px rgba(100,200,255,.5);}
-}
+content:"";position:absolute;top:-6px;left:-14px;right:-14px;bottom:-6px;
+border-radius:16px;border:3px solid rgba(45,95,150,.9);
+box-shadow:0 0 10px rgba(45,95,150,.7),inset 0 0 6px rgba(60,130,200,.3);
+animation:borderPulse 4s ease-in-out infinite}
+@keyframes borderPulse{0%,100%{box-shadow:0 0 10px rgba(45,95,150,.7),inset 0 0 6px rgba(60,130,200,.3)}
+50%{box-shadow:0 0 18px rgba(80,160,255,.9),inset 0 0 10px rgba(100,200,255,.5)}}
 
 /* hero text */
 .subtitle{color:#b8e7ff;font-weight:600;font-size:1.15rem;margin-bottom:.6rem}
@@ -62,56 +42,36 @@ opacity:0;transform:translateY(40px);transition:opacity 1s ease,transform 1s eas
 .panel.visible{opacity:1;transform:translateY(0)}
 
 /* headers */
-.panel h2{
-  text-align:center;
-  font-size:2rem;
-  font-weight:800;
-  letter-spacing:.4px;
-  background:linear-gradient(90deg,#a4e6ff,#e6f8ff,#a4e6ff);
-  background-size:200% 100%;
-  -webkit-background-clip:text;
-  color:transparent;
-  animation:headerShift 7s linear infinite;
-  text-shadow:0 0 14px rgba(150,230,255,.8);
-}
+.panel h2{text-align:center;font-size:2rem;font-weight:800;letter-spacing:.4px;
+background:linear-gradient(90deg,#a4e6ff,#e6f8ff,#a4e6ff);background-size:200% 100%;
+-webkit-background-clip:text;color:transparent;animation:headerShift 7s linear infinite;
+text-shadow:0 0 14px rgba(150,230,255,.8)}
 @keyframes headerShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
 
 /* dropdowns */
-details.drop{
-  background:rgba(25,35,55,.25);
-  border:1px solid rgba(110,170,255,.25);
-  border-radius:14px;
-  padding:1rem 1.2rem;
-  margin-bottom:1.4rem;
-  transition:.3s;
-  backdrop-filter:blur(20px) saturate(150%);
-}
-details.drop summary{
-  cursor:pointer;
-  color:#a4d8ff;
-  font-weight:600;
-  font-size:1.05rem;
-  display:flex;align-items:center;justify-content:space-between;
-}
-details.drop summary::after{
-  content:"▼";
-  font-size:.8rem;margin-left:8px;color:#7fc9ff;transition:transform .3s ease,color .3s ease;
-}
+details.drop{background:rgba(25,35,55,.25);border:1px solid rgba(110,170,255,.25);border-radius:14px;
+padding:1rem 1.2rem;margin-bottom:1.4rem;transition:.3s;backdrop-filter:blur(20px) saturate(150%)}
+details.drop summary{cursor:pointer;color:#a4d8ff;font-weight:600;font-size:1.05rem;display:flex;align-items:center;justify-content:space-between}
+details.drop summary::after{content:"▼";font-size:.8rem;margin-left:8px;color:#7fc9ff;transition:transform .3s ease,color .3s ease}
 details.drop[open] summary::after{transform:rotate(180deg);color:#bde6ff}
 details.drop p,details.drop ol{margin-top:.8rem;color:#e1efff;font-size:.96rem;line-height:1.6}
 .details-btn{margin-top:.9rem;display:inline-block;border:1px solid rgba(120,190,255,.6);border-radius:8px;padding:8px 16px;color:#b8e2ff;font-weight:600;text-decoration:none;transition:.3s}
 .details-btn:hover{background:rgba(125,190,255,.1);box-shadow:0 0 15px rgba(90,170,255,.3)}
 
+/* lists */
+.sources{margin:1rem 0 1rem 1.2rem;list-style-type:square;color:#b6d7ff}
+.sources li{margin:.45rem 0}
+.note{color:#9cb8dd;font-size:.9rem;text-align:center;margin-top:1rem;font-style:italic}
+
 /* footer */
-footer{text-align:center;padding:3rem 1rem 4rem;color:#a4c4ff;border-top:1px solid rgba(120,160,255,.25);background:rgba(0,0,0,.85);z-index:2;position:relative}
+footer{text-align:center;padding:3rem 1rem 4rem;color:#a4c4ff;border-top:1px solid rgba(120,160,255,.25);
+background:rgba(0,0,0,.85);z-index:2;position:relative}
 footer p{font-size:.9rem;line-height:1.4;max-width:900px;margin:0 auto}
-#scrollTop{margin-top:1rem;border:1px solid #7dc9ff;background:transparent;color:#7dc9ff;border-radius:8px;padding:8px 16px;font-weight:600;cursor:pointer;transition:.3s}
+#scrollTop{margin-top:1rem;border:1px solid #7dc9ff;background:transparent;color:#7dc9ff;
+border-radius:8px;padding:8px 16px;font-weight:600;cursor:pointer;transition:.3s}
 #scrollTop:hover{background:rgba(125,201,255,.1);box-shadow:0 0 15px rgba(90,160,255,.25)}
 
-@media(max-width:720px){
-  .panel{margin:2rem 1rem;padding:1.8rem 1.4rem}
-  h1{font-size:2.5rem}
-}
+@media(max-width:720px){.panel{margin:2rem 1rem;padding:1.8rem 1.4rem}h1{font-size:2.5rem}}
 </style>
 </head>
 <body>
@@ -140,7 +100,7 @@ footer p{font-size:.9rem;line-height:1.4;max-width:900px;margin:0 auto}
   </details>
 
   <details class="drop"><summary>Market Gap & Purpose</summary>
-    <p>Unlike frozen AI models, ATRON rebuilds its structure each session—achieving organic, adaptive growth without retraining.</p>
+    <p>Unlike frozen AI models, ATRON rebuilds its structure each session — achieving organic, adaptive growth without retraining.</p>
     <a href="#gap" class="details-btn">More Details →</a>
   </details>
 </section>
@@ -152,7 +112,7 @@ footer p{font-size:.9rem;line-height:1.4;max-width:900px;margin:0 auto}
     <li>Council Engine — cross-checks logic across concurrent agents.</li>
     <li>Brutal Push System — controlled research iteration cycles.</li>
     <li>Seeding Framework — compression + expansion of data nodes.</li>
-    <li>Compression–Expansion Layer — balance of accuracy vs. speed.</li>
+    <li>Compression–Expansion Layer — balances accuracy vs speed.</li>
   </ol>
 </section>
 
@@ -176,7 +136,7 @@ footer p{font-size:.9rem;line-height:1.4;max-width:900px;margin:0 auto}
     <li><strong>ATRON:</strong> Adaptive learning, live validation, real-time consistency checks.</li>
   </ul>
   <p style="text-align:center;margin-top:1.6rem;color:#a8cfff;">Discover the deeper architecture and design ethics behind ATRON:</p>
-  <a href="deep.html" class="btn-primary" style="margin-top:0.6rem;">View Full Breakdown</a>
+  <a href="deep.html" class="btn-primary" style="margin-top:.6rem;">View Full Breakdown</a>
 </section>
 
 <section id="contact" class="panel">
@@ -187,7 +147,7 @@ footer p{font-size:.9rem;line-height:1.4;max-width:900px;margin:0 auto}
 </section>
 
 <footer>
-  <p>© 2025 GridCore / ATRON Systems — MIT License • Version v9.6 Polaris • Verification Framework • Proof-Core Synced</p>
+  <p>© 2025 GridCore / ATRON Systems — MIT License • Version v9.6.1 Polaris • Verification Framework • Proof-Core Synced</p>
   <button id="scrollTop">↑ Back to Top</button>
 </footer>
 
@@ -213,11 +173,16 @@ x.fillStyle=`hsla(${a.hue},100%,75%,0.9)`;x.fill();}
 requestAnimationFrame(draw);}
 draw();
 
-/* Back to top */
+/* fade panels on scroll */
+const panels=document.querySelectorAll('.panel');
+const obs=new IntersectionObserver(es=>{
+ es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});
+},{threshold:.1});
+panels.forEach(p=>obs.observe(p));
+
+/* Back to top fix */
 document.getElementById("scrollTop").addEventListener("click",()=>{
-window.scrollTo({top:0,behavior:"auto"});
-document.documentElement.scrollTop=0;
-document.body.scrollTop=0;
+window.scrollTo({top:0,behavior:"smooth"});
 });
 </script>
 </body>
