@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>ATRON | Polaris v8.9</title>
+<title>ATRON | Polaris v9.0</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{height:100%;overflow-x:hidden;background:#000;font-family:'Inter',sans-serif;color:#d9e9ff;scroll-behavior:smooth}
@@ -17,17 +17,40 @@ body{animation:pageFade 2.3s ease-out;}
 .hero{position:relative;z-index:2;text-align:center;padding:12vh 6% 10vh;animation:fadeUp 1.5s ease-out forwards}
 @keyframes fadeUp{0%{opacity:0;transform:translateY(30px)}100%{opacity:1;transform:translateY(0)}}
 
-/* ATRON title */
+/* ATRON title + holographic frame */
 h1{
+  position:relative;
+  display:inline-block;
   font-size:3.8rem;
   letter-spacing:.9px;
-  background:linear-gradient(90deg,#79d2ff,#c6f5ff,#e9fcff,#79d2ff);
+  background:linear-gradient(90deg,#6ad1ff,#baf4ff,#e9fcff,#6ad1ff);
   background-size:300% 100%;
   -webkit-background-clip:text;
   color:transparent;
   animation:glowShift 8s linear infinite, glowPulse 4s ease-in-out infinite;
   text-shadow:0 0 25px rgba(130,200,255,.75),0 0 55px rgba(60,140,255,.35);
   margin-bottom:.6rem;
+}
+h1::before{
+  content:"";
+  position:absolute;
+  top:-20px;left:-40px;right:-40px;bottom:-15px;
+  border:2px solid transparent;
+  border-image:linear-gradient(90deg,#5ad0ff,#baf6ff,#5ad0ff) 1;
+  border-radius:12px;
+  background:linear-gradient(90deg,#5ad0ff,#baf6ff,#5ad0ff);
+  background-size:400% 100%;
+  -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  -webkit-mask-composite:xor;
+  mask-composite:exclude;
+  animation:borderFlow 6s linear infinite;
+  z-index:-1;
+  opacity:.6;
+}
+@keyframes borderFlow{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
 }
 @keyframes glowShift{
   0%{background-position:0% 50%;}
@@ -50,23 +73,20 @@ h1{
 backdrop-filter:blur(22px) saturate(180%);
 background:rgba(15,25,40,.18) url('https://www.transparenttextures.com/patterns/stardust.png');
 border:1px solid rgba(100,160,255,.28);
-box-shadow:inset 0 0 25px rgba(70,130,255,.12),0 0 40px rgba(60,130,255,.25)}
+box-shadow:inset 0 0 25px rgba(70,130,255,.12),0 0 40px rgba(60,130,255,.25);
+opacity:0;transform:translateY(40px);transition:opacity 1s ease,transform 1s ease;}
+.panel.visible{opacity:1;transform:translateY(0);}
 
 /* section headers */
 .panel h2{
   text-align:center;
   font-size:2rem;
-  color:#d2f3ff;
-  padding-bottom:.5rem;
+  color:#dff6ff;
   background:url('https://www.transparenttextures.com/patterns/brushed-alum.png');
   -webkit-background-clip:text;
   color:transparent;
-  text-shadow:0 0 15px rgba(140,200,255,.75);
-  animation:headerGlow 5s ease-in-out infinite;
-}
-@keyframes headerGlow{
-  0%,100%{filter:drop-shadow(0 0 8px #88cfff)}
-  50%{filter:drop-shadow(0 0 18px #b4e8ff)}
+  text-shadow:0 0 8px rgba(140,200,255,.75);
+  filter:drop-shadow(0 0 10px #9ddcff);
 }
 
 /* dropdowns */
@@ -140,7 +160,7 @@ footer p{font-size:.9rem;line-height:1.4;max-width:900px;margin:0 auto}
   </details>
 
   <details class="drop"><summary>Research Integration</summary>
-    <p>Constructed from interdisciplinary datasets between 2023–2027, including verified sources from MIT CSAIL, OpenAI, DeepMind, Stanford NeuroAI, NASA Ames, and European Space Agency cognitive models. ATRON continuously refines validation through these insights.</p>
+    <p>Constructed from interdisciplinary datasets between 2023–2027, including verified sources from MIT CSAIL, OpenAI, DeepMind, Stanford NeuroAI, NASA Ames, and ESA Cognitive Systems Labs.</p>
     <a href="#research" class="details-btn">More Details →</a>
   </details>
 
@@ -164,11 +184,11 @@ footer p{font-size:.9rem;line-height:1.4;max-width:900px;margin:0 auto}
 <section id="research" class="panel">
   <h2>Research Sources & Validation</h2>
   <ul class="sources">
-    <li>OpenAI Alignment Research (core architecture 2023–2025)</li>
+    <li>OpenAI Alignment Research (2023–2025)</li>
     <li>DeepMind Gemini & AlphaCode Engineering (2024–2026)</li>
     <li>MIT CSAIL Neuro-Symbolic Learning (2023–2027)</li>
     <li>NASA Ames & ESA Data-Fusion Projects (2025–2027)</li>
-    <li>OECD & WHO AI Governance Data Models (2024–2027)</li>
+    <li>OECD & WHO AI Governance Models (2024–2027)</li>
   </ul>
   <p class="note">This represents only a small portion of ATRON’s verified ingest sources.</p>
 </section>
@@ -186,20 +206,20 @@ footer p{font-size:.9rem;line-height:1.4;max-width:900px;margin:0 auto}
 
 <section id="contact" class="panel">
   <h2>Contact GridCore Systems</h2>
-  <p>We help research teams, startups, and innovators integrate adaptive AI logic into real-world systems. GridCore offers collaborative development, early-stage licensing, and technical partnerships for organisations aiming to fuse human insight with verified machine reasoning.</p>
+  <p>We help research teams, startups, and innovators integrate adaptive AI logic into real-world systems. GridCore offers collaborative development, early-stage licensing, and technical partnerships.</p>
   <p style="margin-top:1rem;">For enquiries or collaboration:</p>
   <p><a href="mailto:gridcoresystems@gmail.com" class="details-btn">gridcoresystems@gmail.com</a></p>
 </section>
 
 <footer>
-  <p>© 2025 GridCore / ATRON Systems — MIT License • Status: Truth Flow Stable • Version v8.9 Polaris • Verification Framework • Proof-Core Synced</p>
+  <p>© 2025 GridCore / ATRON Systems — MIT License • Version v9.0 Polaris • Verification Framework • Proof-Core Synced</p>
   <button id="scrollTop">↑ Back to Top</button>
 </footer>
 
 <script>
-window.onload = ()=>window.scrollTo(0,0);
+window.onload=()=>window.scrollTo(0,0);
 
-/* background mesh */
+/* mesh background */
 const c=document.getElementById("mesh-bg"),x=c.getContext("2d");
 let w,h,p=[];const N=95,D=165,S=.25;
 function R(){w=c.width=innerWidth;h=c.height=innerHeight;p=[];
@@ -220,8 +240,18 @@ x.fillStyle=`hsla(${a.hue},100%,75%,0.85)`;x.fill();}
 requestAnimationFrame(draw);}
 draw();
 
-/* fixed scroll to top */
-document.getElementById("scrollTop").onclick=()=>{window.scrollTo({top:0,behavior:"smooth"});}
+/* fade-on-scroll */
+const panels=document.querySelectorAll('.panel');
+const obs=new IntersectionObserver(entries=>{
+entries.forEach(e=>{
+if(e.isIntersecting){e.target.classList.add('visible');}
+else{e.target.classList.remove('visible');}
+});
+},{threshold:0.15});
+panels.forEach(p=>obs.observe(p));
+
+/* scroll to top */
+document.getElementById("scrollTop").addEventListener("click",()=>{window.scrollTo({top:0,behavior:"smooth"});});
 </script>
 </body>
 </html>
