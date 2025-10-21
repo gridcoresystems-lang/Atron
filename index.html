@@ -1,42 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ATRON | Polaris v8.6</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ATRON | Polaris v8.7</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{height:100%;overflow-x:hidden;background:#000;font-family:'Inter',sans-serif;color:#d9e9ff;scroll-behavior:smooth}
 #mesh-bg{position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:0;pointer-events:none;background:#000}
+
+/* fade-in */
 .fade-in{opacity:0;animation:fadeUp 1.5s ease-out forwards}
 @keyframes fadeUp{0%{opacity:0;transform:translateY(30px)}100%{opacity:1;transform:translateY(0)}}
+
+/* hero */
 .hero{position:relative;z-index:2;text-align:center;padding:12vh 6% 10vh}
-h1{color:#7fcfff;font-size:3.3rem;margin-bottom:.5rem;letter-spacing:.5px}
-.subtitle{color:#a8d8ff;font-weight:600;font-size:1.1rem;margin-bottom:.6rem}
+h1{
+  font-size:3.6rem;
+  letter-spacing:.8px;
+  color:#e9f6ff;
+  text-shadow:0 0 12px rgba(150,220,255,.8),0 0 25px rgba(90,160,255,.35);
+  margin-bottom:.6rem;
+}
+.subtitle{color:#a8d8ff;font-weight:600;font-size:1.15rem;margin-bottom:.6rem}
+.tagline{color:#c6e8ff;font-size:1rem;margin-top:-.2rem;margin-bottom:1rem;opacity:.85}
 .desc{color:#bedaff;max-width:740px;margin:.8rem auto 2.4rem;line-height:1.6;font-size:1.05rem}
 .btn-primary{display:inline-block;background:linear-gradient(90deg,#0a6eff,#3ebaff);color:#fff;padding:14px 38px;border-radius:12px;font-weight:700;text-decoration:none;transition:.3s}
 .btn-primary:hover{transform:translateY(-3px);box-shadow:0 0 24px rgba(80,180,255,.45)}
-.panel{position:relative;z-index:2;max-width:920px;margin:4rem auto;padding:2.6rem 2.2rem;border-radius:22px;
-backdrop-filter:blur(22px) saturate(180%);background:rgba(15,25,40,.15);
+
+/* panels */
+.panel{position:relative;z-index:2;max-width:920px;margin:4rem auto;padding:2.8rem 2.2rem;border-radius:22px;
+backdrop-filter:blur(22px) saturate(180%);
+background:rgba(15,25,40,.18) url('https://www.transparenttextures.com/patterns/stardust.png');
 border:1px solid rgba(100,160,255,.28);
 box-shadow:inset 0 0 25px rgba(70,130,255,.12),0 0 40px rgba(60,130,255,.25)}
-.panel h2{text-align:center;color:#89d0ff;margin-bottom:1.6rem;font-size:1.9rem}
-details.drop{background:rgba(25,35,55,.2);border:1px solid rgba(110,170,255,.25);border-radius:14px;padding:1rem 1.2rem;margin-bottom:1.2rem;transition:.3s;backdrop-filter:blur(20px) saturate(150%)}
-details.drop summary{cursor:pointer;color:#a4d8ff;font-weight:600;font-size:1.05rem;position:relative;list-style:none}
-details.drop summary::marker{display:none}
-details.drop summary::after{content:"⯈";position:absolute;right:0;color:#80caff;transition:transform .3s ease,color .3s ease}
-details.drop[open] summary::after{transform:rotate(90deg);color:#bde6ff}
+.panel h2{text-align:center;color:#89d0ff;margin-bottom:1.8rem;font-size:1.9rem}
+
+/* dropdowns */
+details.drop{
+  background:rgba(25,35,55,.25);
+  border:1px solid rgba(110,170,255,.25);
+  border-radius:14px;
+  padding:1rem 1.2rem;
+  margin-bottom:1.4rem;
+  transition:.3s;
+  backdrop-filter:blur(20px) saturate(150%);
+}
+details.drop summary{
+  cursor:pointer;
+  color:#a4d8ff;
+  font-weight:600;
+  font-size:1.05rem;
+  position:relative;
+  list-style:none;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+details.drop summary::after{
+  content:"▼";
+  font-size:.8rem;
+  margin-left:8px;
+  color:#7fc9ff;
+  transition:transform .3s ease,color .3s ease;
+}
+details.drop[open] summary::after{transform:rotate(180deg);color:#bde6ff}
 details.drop p,details.drop ol{margin-top:.8rem;color:#e1efff;font-size:.96rem;line-height:1.6}
 .details-btn{margin-top:.9rem;display:inline-block;border:1px solid rgba(120,190,255,.6);border-radius:8px;padding:8px 16px;color:#b8e2ff;font-weight:600;text-decoration:none;transition:.3s}
 .details-btn:hover{background:rgba(125,190,255,.1);box-shadow:0 0 15px rgba(90,170,255,.3)}
+
+/* lists */
 .sources{margin:1rem 0 1rem 1.2rem;list-style-type:square;color:#b6d7ff}
 .sources li{margin:.45rem 0}
 .note{color:#9cb8dd;font-size:.9rem;text-align:center;margin-top:1rem;font-style:italic}
+
+/* footer */
 footer{text-align:center;padding:3rem 1rem 4rem;color:#a4c4ff;border-top:1px solid rgba(120,160,255,.25);background:rgba(0,0,0,.85);z-index:2;position:relative}
 footer p{font-size:.9rem;line-height:1.4;max-width:900px;margin:0 auto}
 #scrollTop{margin-top:1rem;border:1px solid #7dc9ff;background:transparent;color:#7dc9ff;border-radius:8px;padding:8px 16px;font-weight:600;cursor:pointer;transition:.3s}
 #scrollTop:hover{background:rgba(125,201,255,.1);box-shadow:0 0 15px rgba(90,160,255,.25)}
-@media(max-width:720px){.panel{margin:2rem 1rem;padding:1.8rem 1.4rem}h1{font-size:2.4rem}}
+
+@media(max-width:720px){
+  .panel{margin:2rem 1rem;padding:1.8rem 1.4rem}
+  h1{font-size:2.5rem}
+}
 </style>
 </head>
 <body>
@@ -44,6 +91,7 @@ footer p{font-size:.9rem;line-height:1.4;max-width:900px;margin:0 auto}
 
 <section class="hero fade-in">
   <h1>ATRON</h1>
+  <p class="tagline">A living adaptive AI framework for dynamic reasoning and data fusion</p>
   <p class="subtitle">Autonomous Truth Reasoning & Observation Network</p>
   <p class="desc">A living intelligence lattice that self-verifies logic and fuses research dynamically.<br><em>Built by GridCore Systems · 2025</em></p>
   <a href="#overview" class="btn-primary">Begin Exploration</a>
@@ -51,20 +99,20 @@ footer p{font-size:.9rem;line-height:1.4;max-width:900px;margin:0 auto}
 
 <section id="overview" class="panel">
   <h2>System Overview</h2>
-  <p>ATRON merges adaptive reasoning, live-data fusion, and compression–expansion logic into one self-evolving structure. Each cycle ingests verified data, reconstructs logic paths, and cross-validates conclusions through its Council Engine.</p>
+  <p style="margin-bottom:1.6rem;">ATRON merges adaptive reasoning, live-data fusion, and compression–expansion logic into one self-evolving structure. Each cycle ingests verified data, reconstructs logic paths, and cross-validates conclusions through its Council Engine.</p>
 
   <details class="drop"><summary>Core Architecture</summary>
-    <p>The Continuity Lattice acts as the structural backbone for logic memory, while the Council Engine coordinates multi-agent reasoning. The Brutal Push System drives iterative stress-testing of new inferences — ensuring each update strengthens, never destabilizes, the overall lattice.</p>
+    <p>The Continuity Lattice, Council Engine, and Brutal Push loops coordinate each reasoning cycle. Every layer checks data consistency before the next iteration begins.</p>
     <a href="#details" class="details-btn">More Details →</a>
   </details>
 
   <details class="drop"><summary>Research Integration</summary>
-    <p>ATRON’s reasoning models are derived from cross-institutional research spanning 2023–2025 and predictive insight studies from 2025–2027. It interprets verified findings to maintain alignment with global safety and consistency benchmarks.</p>
+    <p>Constructed using open research and validated methods from MIT CSAIL, DeepMind, OpenAI, NASA Ames, and Stanford NeuroAI. ATRON ingests and contextualises insights spanning 2023–2027 to refine validation logic and predictive consistency.</p>
     <a href="#research" class="details-btn">More Details →</a>
   </details>
 
   <details class="drop"><summary>Market Gap & Purpose</summary>
-    <p>Unlike static AI systems that rely on frozen weights, ATRON rebuilds its structure dynamically, adapting to live data shifts without retraining. This allows it to maintain accuracy across changing global datasets and contexts.</p>
+    <p>Unlike frozen AI models, ATRON rebuilds its structure each session—achieving organic, adaptive growth without retraining.</p>
     <a href="#gap" class="details-btn">More Details →</a>
   </details>
 </section>
@@ -72,51 +120,55 @@ footer p{font-size:.9rem;line-height:1.4;max-width:900px;margin:0 auto}
 <section id="details" class="panel">
   <h2>Detailed Framework</h2>
   <ol class="sources">
-    <li><strong>Continuity Lattice</strong> — stores long-form reasoning traces with cross-session persistence for cumulative logic growth.</li>
-    <li><strong>Council Engine</strong> — performs multi-agent consensus validation, ensuring that each inference passes collective review.</li>
-    <li><strong>Brutal Push System</strong> — cycles through failure-intent testing, measuring resilience of logic under simulated uncertainty.</li>
-    <li><strong>Seeding Framework</strong> — maps data into compressed nodes for replication, then expands them into real-time usable contexts.</li>
-    <li><strong>Compression–Expansion Layer</strong> — dynamically adjusts fidelity to maintain optimal accuracy-to-speed balance per task.</li>
+    <li>Continuity Lattice — stores structural reasoning memory.</li>
+    <li>Council Engine — cross-checks logic across concurrent agents.</li>
+    <li>Brutal Push System — controlled research iteration cycles.</li>
+    <li>Seeding Framework — compression + expansion of data nodes.</li>
+    <li>Compression–Expansion Layer — balance of accuracy vs. speed.</li>
   </ol>
 </section>
 
 <section id="research" class="panel">
   <h2>Research Sources & Validation</h2>
   <ul class="sources">
-    <li><strong>OpenAI Alignment Research (2023–2025)</strong> — model value alignment, reinforcement transparency, and behavioral drift mitigation papers.</li>
-    <li><strong>DeepMind Gemini & AlphaCode Data</strong> — logic chain verification and adaptive code synthesis pattern analysis.</li>
-    <li><strong>MIT CSAIL Neuro-Symbolic Learning</strong> — multi-modal reasoning benchmarks and compositional truth-tracking methods.</li>
-    <li><strong>NASA Ames Data-Fusion Projects</strong> — real-time environmental modelling and system feedback integration.</li>
-    <li><strong>OECD AI Policy Observatory</strong> — ethical frameworks and governance models integrated into ATRON’s rule weighting.</li>
-    <li><strong>WHO / UN Open Data Interfaces</strong> — health, climate, and humanitarian streams feeding live calibration datasets.</li>
+    <li>OpenAI Alignment Research (2023–2027 insights)</li>
+    <li>DeepMind Gemini & AlphaCode Data</li>
+    <li>MIT CSAIL Neuro-Symbolic Learning</li>
+    <li>NASA Ames Data-Fusion Projects</li>
+    <li>OECD AI Policy Observatory</li>
+    <li>WHO / UN Open Data Interfaces</li>
   </ul>
-  <p class="note">Future ingest: 2025–2027 insight programs include predictive risk modelling, emergent governance systems, and language-truth harmonization frameworks under active evaluation.</p>
+  <p class="note">This represents only a small portion of ATRON’s verified ingest sources.</p>
 </section>
 
 <section id="gap" class="panel">
   <h2>Why ATRON Fills the Gap</h2>
-  <p>Most AI systems stagnate once deployed — ATRON’s logic continuously refreshes against validated live inputs, detecting contextual decay before it manifests in errors.</p>
+  <p>Traditional AI models become outdated; ATRON continuously re-evaluates data and rewires logic using validated streams.</p>
   <ul class="sources">
-    <li><strong>GPT-based systems:</strong> Static training, limited validation, and high latency to new data cycles.</li>
-    <li><strong>ATRON:</strong> Self-verifying inference cycles, constant live ingestion, and distributed proof-core auditing.</li>
+    <li><strong>GPT-based systems:</strong> Static training, stale data, limited context.</li>
+    <li><strong>ATRON:</strong> Adaptive learning, live validation, real-time consistency checks.</li>
   </ul>
-  <p style="text-align:center;margin-top:1.6rem;color:#a8cfff;">Discover the deeper architecture and ethical foundation behind ATRON:</p>
+  <p style="text-align:center;margin-top:1.6rem;color:#a8cfff;">Discover the deeper architecture and design ethics behind ATRON:</p>
   <a href="deep.html" class="btn-primary" style="margin-top:0.6rem;">View Full Breakdown</a>
 </section>
 
 <section id="contact" class="panel">
   <h2>Contact GridCore Systems</h2>
-  <p>For research collaboration or licensing enquiries:</p>
+  <p>We help research teams, startups, and innovators integrate adaptive AI logic into real-world systems. GridCore offers collaborative development, early-stage licensing, and technical partnerships for organisations aiming to fuse human insight with verified machine reasoning.</p>
+  <p style="margin-top:1rem;">For enquiries or collaboration:</p>
   <p><a href="mailto:gridcoresystems@gmail.com" class="details-btn">gridcoresystems@gmail.com</a></p>
 </section>
 
 <footer>
-  <p>© 2025 GridCore / ATRON Systems — MIT License • Status: Truth Flow Stable • Version v8.6 Polaris Final • Verification Framework • Proof-Core Synced</p>
+  <p>© 2025 GridCore / ATRON Systems — MIT License • Status: Truth Flow Stable • Version v8.7 Polaris • Verification Framework • Proof-Core Synced</p>
   <button id="scrollTop">↑ Back to Top</button>
 </footer>
 
 <script>
+/* always start top */
 window.scrollTo(0,0);
+
+/* mesh */
 const c=document.getElementById("mesh-bg"),x=c.getContext("2d");
 let w,h,p=[];const N=95,D=165,S=.15;
 function R(){w=c.width=innerWidth;h=c.height=innerHeight;p=[];
@@ -136,7 +188,9 @@ x.beginPath();x.arc(a.x,a.y,pulse,0,Math.PI*2);
 x.fillStyle=`hsla(${a.hue},100%,75%,0.85)`;x.fill();}
 requestAnimationFrame(draw);}
 draw();
-document.getElementById("scrollTop").onclick=()=>scrollTo({top:0,behavior:"smooth"});
+
+/* scroll to top */
+document.getElementById("scrollTop").addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}));
 </script>
 </body>
 </html>
