@@ -3,63 +3,48 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>ATRON | Polaris v9.0</title>
+<title>ATRON | Polaris v9.1</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{height:100%;overflow-x:hidden;background:#000;font-family:'Inter',sans-serif;color:#d9e9ff;scroll-behavior:smooth}
 #mesh-bg{position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:0;pointer-events:none;background:#000}
 
 /* fade intro */
-body{animation:pageFade 2.3s ease-out;}
+body{animation:pageFade 2.2s ease-out;}
 @keyframes pageFade{0%{opacity:0;}100%{opacity:1;}}
 
 /* hero */
 .hero{position:relative;z-index:2;text-align:center;padding:12vh 6% 10vh;animation:fadeUp 1.5s ease-out forwards}
 @keyframes fadeUp{0%{opacity:0;transform:translateY(30px)}100%{opacity:1;transform:translateY(0)}}
 
-/* ATRON title + holographic frame */
+/* ATRON title */
 h1{
   position:relative;
   display:inline-block;
   font-size:3.8rem;
   letter-spacing:.9px;
-  background:linear-gradient(90deg,#6ad1ff,#baf4ff,#e9fcff,#6ad1ff);
+  background:linear-gradient(90deg,#7fd9ff,#d6f7ff,#a8ecff,#7fd9ff);
   background-size:300% 100%;
   -webkit-background-clip:text;
   color:transparent;
-  animation:glowShift 8s linear infinite, glowPulse 4s ease-in-out infinite;
-  text-shadow:0 0 25px rgba(130,200,255,.75),0 0 55px rgba(60,140,255,.35);
+  animation:glowShift 8s linear infinite;
+  text-shadow:0 0 22px rgba(160,230,255,.75),0 0 45px rgba(70,150,255,.35);
   margin-bottom:.6rem;
 }
 h1::before{
   content:"";
   position:absolute;
-  top:-20px;left:-40px;right:-40px;bottom:-15px;
-  border:2px solid transparent;
-  border-image:linear-gradient(90deg,#5ad0ff,#baf6ff,#5ad0ff) 1;
-  border-radius:12px;
-  background:linear-gradient(90deg,#5ad0ff,#baf6ff,#5ad0ff);
-  background-size:400% 100%;
-  -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
-  -webkit-mask-composite:xor;
-  mask-composite:exclude;
-  animation:borderFlow 6s linear infinite;
+  top:-14px;left:-26px;right:-26px;bottom:-10px;
+  border-radius:20px;
+  background:url('https://www.transparenttextures.com/patterns/crissxcross.png'),linear-gradient(120deg,rgba(100,210,255,.35),rgba(180,250,255,.15));
+  box-shadow:0 0 25px rgba(120,220,255,.25),inset 0 0 15px rgba(150,230,255,.25);
+  pointer-events:none;
   z-index:-1;
-  opacity:.6;
-}
-@keyframes borderFlow{
-  0%{background-position:0% 50%;}
-  50%{background-position:100% 50%;}
-  100%{background-position:0% 50%;}
 }
 @keyframes glowShift{
   0%{background-position:0% 50%;}
   50%{background-position:100% 50%;}
   100%{background-position:0% 50%;}
-}
-@keyframes glowPulse{
-  0%,100%{filter:drop-shadow(0 0 10px #9fe2ff)}
-  50%{filter:drop-shadow(0 0 25px #55bbff)}
 }
 
 .subtitle{color:#b5e3ff;font-weight:600;font-size:1.15rem;margin-bottom:.6rem}
@@ -77,16 +62,16 @@ box-shadow:inset 0 0 25px rgba(70,130,255,.12),0 0 40px rgba(60,130,255,.25);
 opacity:0;transform:translateY(40px);transition:opacity 1s ease,transform 1s ease;}
 .panel.visible{opacity:1;transform:translateY(0);}
 
-/* section headers */
+/* crisp headers */
 .panel h2{
   text-align:center;
   font-size:2rem;
-  color:#dff6ff;
-  background:url('https://www.transparenttextures.com/patterns/brushed-alum.png');
+  color:#dff9ff;
+  letter-spacing:.5px;
+  background:url('https://www.transparenttextures.com/patterns/white-diamond.png');
   -webkit-background-clip:text;
   color:transparent;
-  text-shadow:0 0 8px rgba(140,200,255,.75);
-  filter:drop-shadow(0 0 10px #9ddcff);
+  text-shadow:0 0 8px rgba(140,200,255,.9);
 }
 
 /* dropdowns */
@@ -212,12 +197,12 @@ footer p{font-size:.9rem;line-height:1.4;max-width:900px;margin:0 auto}
 </section>
 
 <footer>
-  <p>© 2025 GridCore / ATRON Systems — MIT License • Version v9.0 Polaris • Verification Framework • Proof-Core Synced</p>
+  <p>© 2025 GridCore / ATRON Systems — MIT License • Version v9.1 Polaris • Verification Framework • Proof-Core Synced</p>
   <button id="scrollTop">↑ Back to Top</button>
 </footer>
 
 <script>
-window.onload=()=>window.scrollTo(0,0);
+window.onload=()=>{window.scrollTo({top:0,left:0,behavior:"instant"});} 
 
 /* mesh background */
 const c=document.getElementById("mesh-bg"),x=c.getContext("2d");
@@ -250,8 +235,8 @@ else{e.target.classList.remove('visible');}
 },{threshold:0.15});
 panels.forEach(p=>obs.observe(p));
 
-/* scroll to top */
-document.getElementById("scrollTop").addEventListener("click",()=>{window.scrollTo({top:0,behavior:"smooth"});});
+/* back-to-top reliable */
+document.getElementById("scrollTop").onclick=()=>window.scrollTo({top:0,left:0,behavior:"smooth"});
 </script>
 </body>
 </html>
