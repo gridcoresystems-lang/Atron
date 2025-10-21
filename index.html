@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ATRON | Polaris Build</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;overflow-x:hidden;background:#000;font-family:'Inter',sans-serif;color:#d9e9ff;scroll-behavior:smooth}
+
+/* mesh canvas */
+#mesh-bg{position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:0;pointer-events:none;background:#000}
+
+/* fade-in hero */
+.fade-in{opacity:0;animation:fadeUp 1.5s ease-out forwards}
+@keyframes fadeUp{0%{opacity:0;transform:translateY(30px)}100%{opacity:1;transform:translateY(0)}}
+
+/* hero */
+.hero{position:relative;z-index:2;text-align:center;padding:12vh 6% 10vh}
+h1{color:#7fcfff;font-size:3.3rem;margin-bottom:.5rem;letter-spacing:.5px}
+.subtitle{color:#a8d8ff;font-weight:600;font-size:1.1rem;margin-bottom:.6rem}
+.desc{color:#bedaff;max-width:740px;margin:.8rem auto 2.4rem;line-height:1.6;font-size:1.05rem}
+.btn-primary{display:inline-block;background:linear-gradient(90deg,#0a6eff,#3ebaff);color:#fff;padding:14px 38px;border-radius:12px;font-weight:700;text-decoration:none;transition:.3s}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 0 24px rgba(80,180,255,.45)}
+
+/* panels */
+.panel{position:relative;z-index:2;max-width:920px;margin:4rem auto;padding:2.6rem 2.2rem;border-radius:22px;
+backdrop-filter:blur(22px) saturate(180%);background:rgba(15,25,40,.15);
+border:1px solid rgba(100,160,255,.28);
+box-shadow:inset 0 0 25px rgba(70,130,255,.12),0 0 40px rgba(60,130,255,.25)}
+.panel h2{text-align:center;color:#89d0ff;margin-bottom:1.6rem;font-size:1.9rem}
+
+/* dropdowns */
+details.drop{background:rgba(25,35,55,.2);border:1px solid rgba(110,170,255,.25);border-radius:14px;padding:1rem 1.2rem;margin-bottom:1.2rem;transition:.3s;backdrop-filter:blur(20px) saturate(150%)}
+details.drop summary{cursor:pointer;color:#a4d8ff;font-weight:600;font-size:1.05rem;position:relative;list-style:none}
+details.drop summary::marker{display:none}
+details.drop summary::after{content:"⯈";position:absolute;right:0;color:#80caff;transition:transform .3s ease,color .3s ease}
+details.drop[open] summary::after{transform:rotate(90deg);color:#bde6ff}
+details.drop p,details.drop ol{margin-top:.8rem;color:#e1efff;font-size:.96rem;line-height:1.6}
+details.drop ol{list-style:decimal inside;padding-left:.8rem}
+.details-btn{margin-top:.9rem;display:inline-block;border:1px solid rgba(120,190,255,.6);border-radius:8px;padding:8px 16px;color:#b8e2ff;font-weight:600;text-decoration:none;transition:.3s}
+.details-btn:hover{background:rgba(125,190,255,.1);box-shadow:0 0 15px rgba(90,170,255,.3)}
+
+/* lists */
+.sources{margin:1rem 0 1rem 1.2rem;list-style-type:square;color:#b6d7ff}
+.sources li{margin:.45rem 0}
+.note{color:#9cb8dd;font-size:.9rem;text-align:center;margin-top:1rem;font-style:italic}
+
+/* footer */
+footer{text-align:center;padding:3rem 1rem;color:#a4c4ff;border-top:1px solid rgba(120,160,255,.25);background:rgba(0,0,0,.8)}
+#scrollTop{margin-top:1rem;border:1px solid #7dc9ff;background:transparent;color:#7dc9ff;border-radius:8px;padding:8px 16px;font-weight:600;cursor:pointer;transition:.3s}
+#scrollTop:hover{background:rgba(125,201,255,.1);box-shadow:0 0 15px rgba(90,160,255,.25)}
+
+@media(max-width:720px){.panel{margin:2rem 1rem;padding:1.8rem 1.4rem}h1{font-size:2.4rem}}
+</style>
+</head>
+<body>
+<canvas id="mesh-bg"></canvas>
+
+<section class="hero fade-in">
+  <h1>ATRON</h1>
+  <p class="subtitle">Autonomous Truth Reasoning & Observation Network</p>
+  <p class="desc">A living intelligence lattice that self-verifies logic and fuses research dynamically.<br><em>Built by GridCore Systems · 2025</em></p>
+  <a href="#overview" class="btn-primary">Begin Exploration</a>
+</section>
+
+<section id="overview" class="panel">
+  <h2>System Overview</h2>
+  <p>ATRON merges adaptive reasoning, live-data fusion, and compression-expansion logic into one self-evolving structure.</p>
+
+  <details class="drop"><summary>Core Architecture</summary>
+    <p>The Continuity Lattice, Council Engine, and Brutal Push loops coordinate each reasoning cycle. Every layer checks data consistency before the next iteration begins.</p>
+    <a href="#details" class="details-btn">More Details →</a>
+  </details>
+
+  <details class="drop"><summary>Research Integration</summary>
+    <p>Constructed using open research and validated methods from MIT CSAIL, DeepMind, OpenAI, NASA Ames, and Stanford NeuroAI. ATRON ingests these verified studies to refine validation logic.</p>
+    <a href="#research" class="details-btn">More Details →</a>
+  </details>
+
+  <details class="drop"><summary>Market Gap & Purpose</summary>
+    <p>Unlike frozen AI models, ATRON rebuilds its structure each session—achieving organic, adaptive growth without retraining.</p>
+    <a href="#gap" class="details-btn">More Details →</a>
+  </details>
+</section>
+
+<section id="details" class="panel">
+  <h2>Detailed Framework</h2>
+  <p>ATRON operates through five persistent subsystems:</p>
+  <ol class="sources">
+    <li>Continuity Lattice — stores structural reasoning memory.</li>
+    <li>Council Engine — cross-checks logic across concurrent agents.</li>
+    <li>Brutal Push System — controlled research iteration cycles.</li>
+    <li>Seeding Framework — compression + expansion of data nodes.</li>
+    <li>Compression–Expansion Layer — balance of accuracy vs. speed.</li>
+  </ol>
+</section>
+
+<section id="research" class="panel">
+  <h2>Research Sources & Validation</h2>
+  <ul class="sources">
+    <li>OpenAI Alignment Research (2023–2025)</li>
+    <li>DeepMind Gemini & AlphaCode Data</li>
+    <li>MIT CSAIL Neuro-Symbolic Learning</li>
+    <li>NASA Ames Data-Fusion Projects</li>
+    <li>OECD AI Policy Observatory</li>
+    <li>WHO / UN Open Data Interfaces</li>
+  </ul>
+  <p class="note">This represents only a small portion of ATRON’s verified ingest sources.</p>
+</section>
+
+<section id="gap" class="panel">
+  <h2>Why ATRON Fills the Gap</h2>
+  <p>Traditional AI models become outdated; ATRON continuously re-evaluates data and rewires logic using validated streams.</p>
+  <ul class="sources">
+    <li><strong>GPT-based systems:</strong> Static training, stale data, limited context.</li>
+    <li><strong>ATRON:</strong> Adaptive learning, live validation, real-time consistency checks.</li>
+  </ul>
+</section>
+
+<section id="contact" class="panel">
+  <h2>Contact GridCore Systems</h2>
+  <p>For research collaboration or licensing enquiries:</p>
+  <p><a href="mailto:gridcoresystems@outlook.com" class="details-btn">gridcoresystems@outlook.com</a></p>
+</section>
+
+<footer>
+  <p>© 2025 GridCore Systems · ATRON Polaris Build · MIT License</p>
+  <button id="scrollTop">↑ Back to Top</button>
+</footer>
+
+<script>
+/* cosmic mesh background */
+const c=document.getElementById("mesh-bg"),x=c.getContext("2d");
+let w,h,p=[];const N=80,D=160,S=.04;
+function R(){w=c.width=innerWidth;h=c.height=innerHeight;p=[];
+for(let i=0;i<N;i++)p.push({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*S,vy:(Math.random()-.5)*S,hue:180+Math.random()*60});}
+addEventListener("resize",R);R();
+function draw(){
+x.clearRect(0,0,w,h);
+const g=x.createRadialGradient(w/2,h/2,0,w/2,h/2,w);
+g.addColorStop(0,"#010712");g.addColorStop(1,"#000");
+x.fillStyle=g;x.fillRect(0,0,w,h);
+for(let i=0;i<N;i++){const a=p[i];a.x+=a.vx;a.y+=a.vy;
+if(a.x<0||a.x>w)a.vx*=-1;if(a.y<0||a.y>h)a.vy*=-1;
+for(let j=i+1;j<N;j++){const b=p[j],dx=a.x-b.x,dy=a.y-b.y,d=Math.sqrt(dx*dx+dy*dy);
+if(d<D){const o=1-d/D;x.strokeStyle=`hsla(${a.hue},90%,70%,${o*.25})`;x.lineWidth=.6;x.beginPath();x.moveTo(a.x,a.y);x.lineTo(b.x,b.y);x.stroke();}}
+const pulse=1.2+Math.sin(Date.now()/600+i)*.4;
+x.beginPath();x.arc(a.x,a.y,pulse,0,Math.PI*2);
+x.fillStyle=`hsla(${a.hue},100%,75%,0.8)`;x.fill();}
+requestAnimationFrame(draw);}
+draw();
+
+/* back to top button */
+document.getElementById("scrollTop").onclick=()=>scrollTo({top:0,behavior:"smooth"});
+</script>
+</body>
+</html>
