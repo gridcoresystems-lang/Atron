@@ -3,50 +3,50 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>ATRON | Polaris v9.3</title>
+<title>ATRON | Polaris v9.4</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{height:100%;overflow-x:hidden;background:#000;font-family:'Inter',sans-serif;color:#d9e9ff;scroll-behavior:smooth}
 #mesh-bg{position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:0;pointer-events:none;background:#000}
 
-/* page fade */
-body{animation:pageFade 2s ease-out;}
-@keyframes pageFade{0%{opacity:0;}100%{opacity:1;}}
+/* fade intro */
+body{animation:pageFade 2s ease-out}
+@keyframes pageFade{0%{opacity:0}100%{opacity:1}}
 
 /* hero */
 .hero{position:relative;z-index:2;text-align:center;padding:12vh 6% 10vh;animation:fadeUp 1.4s ease-out forwards}
 @keyframes fadeUp{0%{opacity:0;transform:translateY(30px)}100%{opacity:1;transform:translateY(0)}}
 
-/* ATRON title + border */
+/* ATRON title */
 .title-wrap{
   position:relative;
   display:inline-block;
-  padding:0.4rem 1.6rem;
+  padding:.3rem 1.2rem;
 }
 h1{
   font-size:3.6rem;
   font-weight:800;
   letter-spacing:.8px;
   color:#bfeaff;
-  text-shadow:0 0 16px rgba(120,200,255,.8),0 0 38px rgba(70,150,255,.4);
-  animation:glowText 4.5s ease-in-out infinite alternate;
+  text-shadow:0 0 14px rgba(120,200,255,.8),0 0 30px rgba(70,150,255,.35);
+  animation:glowText 5s ease-in-out infinite alternate;
 }
 @keyframes glowText{
-  from{text-shadow:0 0 16px rgba(130,230,255,.75),0 0 35px rgba(90,170,255,.4);}
-  to{text-shadow:0 0 26px rgba(180,250,255,.95),0 0 60px rgba(100,200,255,.55);}
+  from{text-shadow:0 0 14px rgba(120,200,255,.7),0 0 30px rgba(60,140,255,.3)}
+  to{text-shadow:0 0 18px rgba(180,250,255,.9),0 0 45px rgba(100,200,255,.4)}
 }
 .title-wrap::before{
   content:"";
   position:absolute;
-  top:-8px;left:-20px;right:-20px;bottom:-8px;
-  border-radius:20px;
-  border:3px solid rgba(140,220,255,.9);
-  animation:borderPulse 3.5s ease-in-out infinite;
-  box-shadow:0 0 18px rgba(120,220,255,.35),inset 0 0 12px rgba(180,250,255,.2);
+  top:-6px;left:-16px;right:-16px;bottom:-6px;
+  border-radius:18px;
+  border:3px solid rgba(60,130,200,.85);
+  box-shadow:0 0 12px rgba(80,160,220,.35),inset 0 0 8px rgba(100,200,255,.15);
+  animation:borderPulse 3.8s ease-in-out infinite;
 }
 @keyframes borderPulse{
-  0%,100%{border-color:rgba(140,220,255,.6);box-shadow:0 0 20px rgba(100,190,255,.3);}
-  50%{border-color:rgba(180,250,255,1);box-shadow:0 0 30px rgba(180,250,255,.55);}
+  0%,100%{border-color:rgba(60,130,200,.7);}
+  50%{border-color:rgba(100,190,255,1);}
 }
 
 /* hero text */
@@ -62,8 +62,8 @@ backdrop-filter:blur(22px) saturate(180%);
 background:rgba(15,25,40,.18) url('https://www.transparenttextures.com/patterns/stardust.png');
 border:1px solid rgba(100,160,255,.28);
 box-shadow:inset 0 0 25px rgba(70,130,255,.12),0 0 40px rgba(60,130,255,.25);
-opacity:0;transform:translateY(40px);transition:opacity 1s ease,transform 1s ease;}
-.panel.visible{opacity:1;transform:translateY(0);}
+opacity:0;transform:translateY(40px);transition:opacity 1s ease,transform 1s ease}
+.panel.visible{opacity:1;transform:translateY(0)}
 
 /* headers */
 .panel h2{
@@ -193,12 +193,12 @@ footer p{font-size:.9rem;line-height:1.4;max-width:900px;margin:0 auto}
 </section>
 
 <footer>
-  <p>© 2025 GridCore / ATRON Systems — MIT License • Version v9.3 Polaris • Verification Framework • Proof-Core Synced</p>
+  <p>© 2025 GridCore / ATRON Systems — MIT License • Version v9.4 Polaris • Verification Framework • Proof-Core Synced</p>
   <button id="scrollTop">↑ Back to Top</button>
 </footer>
 
 <script>
-window.onload=()=>{setTimeout(()=>window.scrollTo(0,0),50);}
+window.onload=()=>{setTimeout(()=>window.scrollTo(0,0),60);}
 
 /* mesh */
 const c=document.getElementById("mesh-bg"),x=c.getContext("2d");
@@ -221,20 +221,19 @@ x.fillStyle=`hsla(${a.hue},100%,75%,0.9)`;x.fill();}
 requestAnimationFrame(draw);}
 draw();
 
-/* fade on scroll */
+/* fade scroll */
 const panels=document.querySelectorAll('.panel');
 const obs=new IntersectionObserver(entries=>{
 entries.forEach(e=>{
 if(e.isIntersecting){e.target.classList.add('visible');}
-else{e.target.classList.remove('visible');}
 });
 },{threshold:0.15});
 panels.forEach(p=>obs.observe(p));
 
-/* robust Back-to-Top */
+/* Back to top robust */
 document.getElementById("scrollTop").addEventListener("click",()=>{
-try{window.scroll({top:0,left:0,behavior:'smooth'});}
-catch{window.scrollTo(0,0);}
+window.scrollTo({top:0,behavior:"smooth"});
+setTimeout(()=>window.scrollTo(0,0),800);
 });
 </script>
 </body>
