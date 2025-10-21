@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>ATRON | Polaris v9.2</title>
+<title>ATRON | Polaris v9.3</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{height:100%;overflow-x:hidden;background:#000;font-family:'Inter',sans-serif;color:#d9e9ff;scroll-behavior:smooth}
 #mesh-bg{position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:0;pointer-events:none;background:#000}
 
-/* global fade */
-body{animation:pageFade 2.2s ease-out;}
+/* page fade */
+body{animation:pageFade 2s ease-out;}
 @keyframes pageFade{0%{opacity:0;}100%{opacity:1;}}
 
 /* hero */
@@ -21,12 +21,12 @@ body{animation:pageFade 2.2s ease-out;}
 .title-wrap{
   position:relative;
   display:inline-block;
-  padding:0.8rem 2.4rem;
+  padding:0.4rem 1.6rem;
 }
 h1{
-  font-size:3.8rem;
+  font-size:3.6rem;
   font-weight:800;
-  letter-spacing:.9px;
+  letter-spacing:.8px;
   color:#bfeaff;
   text-shadow:0 0 16px rgba(120,200,255,.8),0 0 38px rgba(70,150,255,.4);
   animation:glowText 4.5s ease-in-out infinite alternate;
@@ -38,15 +38,15 @@ h1{
 .title-wrap::before{
   content:"";
   position:absolute;
-  top:-10px;left:-25px;right:-25px;bottom:-10px;
-  border-radius:26px;
-  border:2.5px solid rgba(110,200,255,.85);
+  top:-8px;left:-20px;right:-20px;bottom:-8px;
+  border-radius:20px;
+  border:3px solid rgba(140,220,255,.9);
   animation:borderPulse 3.5s ease-in-out infinite;
-  box-shadow:0 0 15px rgba(100,200,255,.25),inset 0 0 10px rgba(140,230,255,.15);
+  box-shadow:0 0 18px rgba(120,220,255,.35),inset 0 0 12px rgba(180,250,255,.2);
 }
 @keyframes borderPulse{
-  0%,100%{border-color:rgba(110,200,255,.6);box-shadow:0 0 20px rgba(90,180,255,.25);}
-  50%{border-color:rgba(170,240,255,1);box-shadow:0 0 28px rgba(160,250,255,.55);}
+  0%,100%{border-color:rgba(140,220,255,.6);box-shadow:0 0 20px rgba(100,190,255,.3);}
+  50%{border-color:rgba(180,250,255,1);box-shadow:0 0 30px rgba(180,250,255,.55);}
 }
 
 /* hero text */
@@ -65,7 +65,7 @@ box-shadow:inset 0 0 25px rgba(70,130,255,.12),0 0 40px rgba(60,130,255,.25);
 opacity:0;transform:translateY(40px);transition:opacity 1s ease,transform 1s ease;}
 .panel.visible{opacity:1;transform:translateY(0);}
 
-/* refined headers */
+/* headers */
 .panel h2{
   text-align:center;
   font-size:2rem;
@@ -119,7 +119,7 @@ footer p{font-size:.9rem;line-height:1.4;max-width:900px;margin:0 auto}
 
 @media(max-width:720px){
   .panel{margin:2rem 1rem;padding:1.8rem 1.4rem}
-  h1{font-size:2.4rem}
+  h1{font-size:2.5rem}
 }
 </style>
 </head>
@@ -193,16 +193,16 @@ footer p{font-size:.9rem;line-height:1.4;max-width:900px;margin:0 auto}
 </section>
 
 <footer>
-  <p>© 2025 GridCore / ATRON Systems — MIT License • Version v9.2 Polaris • Verification Framework • Proof-Core Synced</p>
+  <p>© 2025 GridCore / ATRON Systems — MIT License • Version v9.3 Polaris • Verification Framework • Proof-Core Synced</p>
   <button id="scrollTop">↑ Back to Top</button>
 </footer>
 
 <script>
-window.onload=()=>{setTimeout(()=>window.scrollTo(0,0),100);}
+window.onload=()=>{setTimeout(()=>window.scrollTo(0,0),50);}
 
-/* mesh background */
+/* mesh */
 const c=document.getElementById("mesh-bg"),x=c.getContext("2d");
-let w,h,p=[];const N=95,D=165,S=.25;
+let w,h,p=[];const N=95,D=165,S=.35;
 function R(){w=c.width=innerWidth;h=c.height=innerHeight;p=[];
 for(let i=0;i<N;i++)p.push({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*S,vy:(Math.random()-.5)*S,hue:180+Math.random()*60});}
 addEventListener("resize",R);R();
@@ -214,14 +214,14 @@ x.fillStyle=g;x.fillRect(0,0,w,h);
 for(let i=0;i<N;i++){const a=p[i];a.x+=a.vx;a.y+=a.vy;
 if(a.x<0||a.x>w)a.vx*=-1;if(a.y<0||a.y>h)a.vy*=-1;
 for(let j=i+1;j<N;j++){const b=p[j],dx=a.x-b.x,dy=a.y-b.y,d=Math.sqrt(dx*dx+dy*dy);
-if(d<D){const o=1-d/D;x.strokeStyle=`hsla(${a.hue},90%,70%,${o*.35})`;x.lineWidth=.7;x.beginPath();x.moveTo(a.x,a.y);x.lineTo(b.x,b.y);x.stroke();}}
-const pulse=1.4+Math.sin(Date.now()/350+i)*.55;
+if(d<D){const o=1-d/D;x.strokeStyle=`hsla(${a.hue},90%,70%,${o*.45})`;x.lineWidth=.9;x.beginPath();x.moveTo(a.x,a.y);x.lineTo(b.x,b.y);x.stroke();}}
+const pulse=1.6+Math.sin(Date.now()/280+i)*.65;
 x.beginPath();x.arc(a.x,a.y,pulse,0,Math.PI*2);
-x.fillStyle=`hsla(${a.hue},100%,75%,0.85)`;x.fill();}
+x.fillStyle=`hsla(${a.hue},100%,75%,0.9)`;x.fill();}
 requestAnimationFrame(draw);}
 draw();
 
-/* fade-on-scroll */
+/* fade on scroll */
 const panels=document.querySelectorAll('.panel');
 const obs=new IntersectionObserver(entries=>{
 entries.forEach(e=>{
@@ -231,8 +231,11 @@ else{e.target.classList.remove('visible');}
 },{threshold:0.15});
 panels.forEach(p=>obs.observe(p));
 
-/* solid back-to-top */
-document.getElementById("scrollTop").onclick=()=>window.scrollTo({top:0,left:0,behavior:"instant"});
+/* robust Back-to-Top */
+document.getElementById("scrollTop").addEventListener("click",()=>{
+try{window.scroll({top:0,left:0,behavior:'smooth'});}
+catch{window.scrollTo(0,0);}
+});
 </script>
 </body>
 </html>
