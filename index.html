@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>ATRON | Polaris v9.7.1</title>
+<title>ATRON | Polaris v9.7.2</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{
@@ -15,7 +15,7 @@ html,body{
   scroll-behavior:smooth;
 }
 #mesh-bg{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;background:#000}
-body{animation:pageFade 1.4s ease-out}@keyframes pageFade{0%{opacity:0}100%{opacity:1}}
+body{animation:pageFade 1.6s ease-out}@keyframes pageFade{0%{opacity:0}100%{opacity:1}}
 
 /* hero */
 .hero{
@@ -28,12 +28,12 @@ body{animation:pageFade 1.4s ease-out}@keyframes pageFade{0%{opacity:0}100%{opac
   justify-content:flex-start;
   align-items:center;
   padding-top:6vh;
-  animation:fadeUp 1.2s ease-out forwards;
+  animation:fadeUp 1.3s ease-out forwards;
 }
 @keyframes fadeUp{0%{opacity:0;transform:translateY(25px)}100%{opacity:1;transform:translateY(0)}}
 
 .title-wrap{position:relative;display:inline-block;padding:.2rem .8rem;margin-bottom:14px}
-h1{font-size:3.3rem;font-weight:800;letter-spacing:.8px;color:#bfeaff;text-shadow:0 0 14px rgba(120,200,255,.8),0 0 30px rgba(70,150,255,.35)}
+h1{font-size:3.4rem;font-weight:800;letter-spacing:.8px;color:#bfeaff;text-shadow:0 0 14px rgba(120,200,255,.8),0 0 30px rgba(70,150,255,.35)}
 .title-wrap::before{
   content:"";position:absolute;top:-6px;left:-14px;right:-14px;bottom:-6px;
   border-radius:16px;border:3px solid rgba(45,95,150,.9);
@@ -44,35 +44,22 @@ h1{font-size:3.3rem;font-weight:800;letter-spacing:.8px;color:#bfeaff;text-shado
   0%,100%{box-shadow:0 0 10px rgba(45,95,150,.7),inset 0 0 6px rgba(60,130,200,.3)}
   50%{box-shadow:0 0 18px rgba(80,160,255,.9),inset 0 0 10px rgba(100,200,255,.5)}
 }
-
 .subtitle{color:#b8e7ff;font-weight:600;font-size:1.1rem;margin-bottom:.5rem}
 .tagline{color:#d6f0ff;font-size:1rem;margin-top:-.2rem;margin-bottom:.8rem;opacity:.9}
 .desc{color:#cbe2ff;max-width:740px;margin:.6rem auto 1.6rem;line-height:1.6;font-size:1.02rem}
 .btn-primary{
-  display:inline-block;
-  background:linear-gradient(90deg,#0a6eff,#3ebaff);
-  color:#fff;
-  padding:13px 34px;
-  border-radius:12px;
-  font-weight:700;
-  text-decoration:none;
-  transition:.3s;
+  display:inline-block;background:linear-gradient(90deg,#0a6eff,#3ebaff);
+  color:#fff;padding:13px 34px;border-radius:12px;font-weight:700;text-decoration:none;transition:.3s;
 }
 .btn-primary:hover{transform:translateY(-3px);box-shadow:0 0 24px rgba(80,180,255,.45)}
 
-/* transition line flush to CTA */
+/* transition line flush */
 .transition-line{
-  width:100%;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  flex-direction:column;
-  height:60px;
-  margin-top:4px;
+  width:100%;display:flex;justify-content:center;align-items:center;flex-direction:column;
+  height:60px;margin-top:4px;margin-bottom:0;
 }
 .transition-line::before{
-  content:"";
-  width:2px;height:45px;
+  content:"";width:2px;height:45px;
   background:linear-gradient(to bottom,rgba(80,160,255,.3),rgba(80,160,255,0));
   animation:lineFade 4s ease-in-out infinite;
 }
@@ -94,31 +81,20 @@ h1{font-size:3.3rem;font-weight:800;letter-spacing:.8px;color:#bfeaff;text-shado
   background:rgba(15,25,40,.18);
   border:1px solid rgba(100,160,255,.28);
   box-shadow:inset 0 0 25px rgba(70,130,255,.12),0 0 40px rgba(60,130,255,.25);
-  opacity:0;
-  transform:translateY(40px);
-  transition:opacity 1s ease,transform 1s ease;
+  opacity:0;transform:translateY(40px);transition:opacity 1s ease,transform 1s ease;
 }
 .panel.visible{opacity:1;transform:translateY(0)}
-
 .panel h2{
-  text-align:center;
-  font-size:1.9rem;
-  font-weight:800;
+  text-align:center;font-size:1.9rem;font-weight:800;
   background:linear-gradient(90deg,#a4e6ff,#e6f8ff,#a4e6ff);
-  -webkit-background-clip:text;
-  color:transparent;
+  -webkit-background-clip:text;color:transparent;
   animation:headerShift 7s linear infinite;
   text-shadow:0 0 14px rgba(150,230,255,.8);
 }
 @keyframes headerShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
-
 details.drop{
-  background:rgba(25,35,55,.25);
-  border:1px solid rgba(110,170,255,.25);
-  border-radius:14px;
-  padding:1rem 1.2rem;
-  margin-bottom:1rem;
-  transition:.3s;
+  background:rgba(25,35,55,.25);border:1px solid rgba(110,170,255,.25);border-radius:14px;
+  padding:1rem 1.2rem;margin-bottom:1rem;transition:.3s;
 }
 details.drop summary{
   cursor:pointer;color:#a4d8ff;font-weight:600;font-size:1.03rem;
@@ -130,31 +106,12 @@ details.drop summary::after{
 }
 details.drop[open] summary::after{transform:rotate(180deg);color:#bde6ff}
 details.drop p{margin-top:.6rem;color:#e1efff;font-size:.95rem;line-height:1.6}
-footer{
-  text-align:center;
-  padding:2.6rem 1rem 3.2rem;
-  color:#a4c4ff;
-  border-top:1px solid rgba(120,160,255,.25);
-  background:rgba(0,0,0,.85);
-  z-index:2;
-  position:relative;
-}
-#scrollTop{
-  margin-top:1rem;
-  border:1px solid #7dc9ff;
-  background:transparent;
-  color:#7dc9ff;
-  border-radius:8px;
-  padding:8px 16px;
-  font-weight:600;
-  cursor:pointer;
-  transition:.3s;
-}
+footer{text-align:center;padding:2.6rem 1rem 3.2rem;color:#a4c4ff;border-top:1px solid rgba(120,160,255,.25);
+background:rgba(0,0,0,.85);z-index:2;position:relative}
+#scrollTop{margin-top:1rem;border:1px solid #7dc9ff;background:transparent;color:#7dc9ff;
+border-radius:8px;padding:8px 16px;font-weight:600;cursor:pointer;transition:.3s}
 #scrollTop:hover{background:rgba(125,201,255,.1);box-shadow:0 0 15px rgba(90,160,255,.25)}
-@media(max-width:720px){
-  .panel{margin:1.8rem 1rem;padding:1.6rem 1.2rem}
-  h1{font-size:2.6rem}
-}
+@media(max-width:720px){.panel{margin:1.8rem 1rem;padding:1.6rem 1.2rem}h1{font-size:2.6rem}}
 </style>
 </head>
 <body>
@@ -173,21 +130,76 @@ footer{
   </div>
 </section>
 
-<!-- flush below line -->
 <section id="overview" class="panel">
   <h2>System Overview</h2>
   <p>ATRON merges adaptive reasoning, live-data fusion, and compression–expansion logic into one self-evolving structure. Each cycle ingests verified data, reconstructs logic paths, and cross-validates conclusions through its Council Engine.</p>
+
+  <details class="drop"><summary>Core Architecture</summary>
+    <p>The Continuity Lattice, Council Engine, and Brutal Push loops coordinate each reasoning cycle. Every layer checks data consistency before the next iteration begins.</p>
+    <a href="#details" class="details-btn">More Details →</a>
+  </details>
+
+  <details class="drop"><summary>Research Integration</summary>
+    <p>Constructed using open research and validated methods from MIT CSAIL, DeepMind, OpenAI, NASA Ames, and Stanford NeuroAI. ATRON ingests and contextualises insights spanning 2023–2027 to refine validation logic and predictive consistency.</p>
+    <a href="#research" class="details-btn">More Details →</a>
+  </details>
+
+  <details class="drop"><summary>Market Gap & Purpose</summary>
+    <p>Unlike frozen AI models, ATRON rebuilds its structure each session — achieving organic, adaptive growth without retraining.</p>
+    <a href="#gap" class="details-btn">More Details →</a>
+  </details>
+</section>
+
+<section id="details" class="panel">
+  <h2>Detailed Framework</h2>
+  <ol class="sources">
+    <li>Continuity Lattice — stores structural reasoning memory.</li>
+    <li>Council Engine — cross-checks logic across concurrent agents.</li>
+    <li>Brutal Push System — controlled research iteration cycles.</li>
+    <li>Seeding Framework — compression + expansion of data nodes.</li>
+    <li>Compression–Expansion Layer — balances accuracy vs speed.</li>
+  </ol>
+</section>
+
+<section id="research" class="panel">
+  <h2>Research Sources & Validation</h2>
+  <ul class="sources">
+    <li>OpenAI Alignment Research (2023–2025)</li>
+    <li>DeepMind Gemini & AlphaCode Engineering (2024–2026)</li>
+    <li>MIT CSAIL Neuro-Symbolic Learning (2023–2027)</li>
+    <li>NASA Ames & ESA Data-Fusion Projects (2025–2027)</li>
+    <li>OECD & WHO AI Governance Models (2024–2027)</li>
+  </ul>
+  <p class="note">This represents only a small portion of ATRON’s verified ingest sources.</p>
+</section>
+
+<section id="gap" class="panel">
+  <h2>Why ATRON Fills the Gap</h2>
+  <p>Traditional AI models become outdated; ATRON continuously re-evaluates data and rewires logic using validated streams.</p>
+  <ul class="sources">
+    <li><strong>GPT-based systems:</strong> Static training, stale data, limited context.</li>
+    <li><strong>ATRON:</strong> Adaptive learning, live validation, real-time consistency checks.</li>
+  </ul>
+  <p style="text-align:center;margin-top:1.6rem;color:#a8cfff;">Discover the deeper architecture and design ethics behind ATRON:</p>
+  <a href="deep.html" class="btn-primary" style="margin-top:.6rem;">View Full Breakdown</a>
+</section>
+
+<section id="contact" class="panel">
+  <h2>Contact GridCore Systems</h2>
+  <p>We help research teams, startups, and innovators integrate adaptive AI logic into real-world systems. GridCore offers collaborative development, early-stage licensing, and technical partnerships for organisations aiming to fuse human insight with verified machine reasoning.</p>
+  <p style="margin-top:1rem;">For enquiries or collaboration:</p>
+  <p><a href="mailto:gridcoresystems@gmail.com" class="details-btn">gridcoresystems@gmail.com</a></p>
 </section>
 
 <footer>
-  <p>© 2025 GridCore / ATRON Systems — MIT License • v9.7.1 Polaris</p>
+  <p>© 2025 GridCore / ATRON Systems — MIT License • Version v9.7.2 Polaris • Verification Framework • Proof-Core Synced</p>
   <button id="scrollTop">↑ Back to Top</button>
 </footer>
 
 <script>
-/* mesh background */
+/* mesh */
 const c=document.getElementById("mesh-bg"),x=c.getContext("2d");
-let w,h,p=[];const N=90,D=165,S=.35;
+let w,h,p=[];const N=95,D=165,S=.35;
 function R(){w=c.width=innerWidth;h=c.height=innerHeight;p=[];
 for(let i=0;i<N;i++)p.push({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*S,vy:(Math.random()-.5)*S,hue:180+Math.random()*60});}
 addEventListener("resize",R);R();
@@ -196,15 +208,15 @@ x.clearRect(0,0,w,h);
 const g=x.createRadialGradient(w/2,h/2,0,w/2,h/2,w);
 g.addColorStop(0,"#010712");g.addColorStop(1,"#000");
 x.fillStyle=g;x.fillRect(0,0,w,h);
-for(let i=0;i<N;i++){
- const a=p[i];a.x+=a.vx;a.y+=a.vy;
- if(a.x<0||a.x>w)a.vx*=-1;if(a.y<0||a.y>h)a.vy*=-1;
- for(let j=i+1;j<N;j++){const b=p[j],dx=a.x-b.x,dy=a.y-b.y,d=Math.sqrt(dx*dx+dy*dy);
-  if(d<D){const o=1-d/D;x.strokeStyle=`hsla(${a.hue},90%,70%,${o*.4})`;x.lineWidth=.8;x.beginPath();x.moveTo(a.x,a.y);x.lineTo(b.x,b.y);x.stroke();}}
- const pulse=1.5+Math.sin(Date.now()/280+i)*.55;
- x.beginPath();x.arc(a.x,a.y,pulse,0,Math.PI*2);
- x.fillStyle=`hsla(${a.hue},100%,75%,0.85)`;x.fill();}
-requestAnimationFrame(draw);}draw();
+for(let i=0;i<N;i++){const a=p[i];a.x+=a.vx;a.y+=a.vy;
+if(a.x<0||a.x>w)a.vx*=-1;if(a.y<0||a.y>h)a.vy*=-1;
+for(let j=i+1;j<N;j++){const b=p[j],dx=a.x-b.x,dy=a.y-b.y,d=Math.sqrt(dx*dx+dy*dy);
+if(d<D){const o=1-d/D;x.strokeStyle=`hsla(${a.hue},90%,70%,${o*.45})`;x.lineWidth=.9;x.beginPath();x.moveTo(a.x,a.y);x.lineTo(b.x,b.y);x.stroke();}}
+const pulse=1.6+Math.sin(Date.now()/280+i)*.65;
+x.beginPath();x.arc(a.x,a.y,pulse,0,Math.PI*2);
+x.fillStyle=`hsla(${a.hue},100%,75%,0.9)`;x.fill();}
+requestAnimationFrame(draw);}
+draw();
 
 /* fade observer */
 const panels=document.querySelectorAll('.panel');
@@ -212,9 +224,9 @@ const obs=new IntersectionObserver(e=>{e.forEach(v=>{if(v.isIntersecting)v.targe
 panels.forEach(p=>obs.observe(p));
 
 /* back to top */
-document.getElementById("scrollTop").onclick=()=>window.scrollTo({top:0,behavior:"smooth"});
+document.getElementById("scrollTop").addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}));
 
-/* always start at top (un-sticky refresh) */
+/* always start at top (fix sticky refresh) */
 window.history.scrollRestoration="manual";
 window.addEventListener("load",()=>window.scrollTo(0,0));
 window.addEventListener("pageshow",()=>window.scrollTo(0,0));
