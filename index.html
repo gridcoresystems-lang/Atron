@@ -3,55 +3,36 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>ATRON | Polaris v9.6.8</title>
+<title>ATRON | Polaris v9.6.9</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{height:100%;overflow-x:hidden;background:#000;font-family:'Inter',sans-serif;color:#d9e9ff;scroll-behavior:smooth}
 #mesh-bg{position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:0;pointer-events:none;background:#000}
 body{animation:pageFade 1.4s ease-out}@keyframes pageFade{0%{opacity:0}100%{opacity:1}}
 
-/* hero */
-.hero{
-  position:relative;
-  z-index:2;
-  text-align:center;
-  min-height:92svh;
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-start;
-  align-items:center;
-  padding-top:6vh;
-  animation:fadeUp 1.2s ease-out forwards;
-}
+.hero{position:relative;z-index:2;text-align:center;min-height:92svh;display:flex;flex-direction:column;justify-content:flex-start;align-items:center;padding-top:6vh;animation:fadeUp 1.2s ease-out forwards}
 @keyframes fadeUp{0%{opacity:0;transform:translateY(25px)}100%{opacity:1;transform:translateY(0)}}
 
-/* ATRON title */
 .title-wrap{position:relative;display:inline-block;padding:.2rem .8rem;margin-bottom:14px}
 h1{font-size:3.3rem;font-weight:800;letter-spacing:.8px;color:#bfeaff;text-shadow:0 0 14px rgba(120,200,255,.8),0 0 30px rgba(70,150,255,.35)}
-.title-wrap::before{
-content:"";position:absolute;top:-6px;left:-14px;right:-14px;bottom:-6px;
-border-radius:16px;border:3px solid rgba(45,95,150,.9);
-box-shadow:0 0 10px rgba(45,95,150,.7),inset 0 0 6px rgba(60,130,200,.3);
-animation:borderPulse 4s ease-in-out infinite}
+.title-wrap::before{content:"";position:absolute;top:-6px;left:-14px;right:-14px;bottom:-6px;border-radius:16px;border:3px solid rgba(45,95,150,.9);box-shadow:0 0 10px rgba(45,95,150,.7),inset 0 0 6px rgba(60,130,200,.3);animation:borderPulse 4s ease-in-out infinite}
 @keyframes borderPulse{0%,100%{box-shadow:0 0 10px rgba(45,95,150,.7),inset 0 0 6px rgba(60,130,200,.3)}50%{box-shadow:0 0 18px rgba(80,160,255,.9),inset 0 0 10px rgba(100,200,255,.5)}}
 
-/* hero text */
 .subtitle{color:#b8e7ff;font-weight:600;font-size:1.1rem;margin-bottom:.5rem}
 .tagline{color:#d6f0ff;font-size:1rem;margin-top:-.2rem;margin-bottom:.8rem;opacity:.9}
 .desc{color:#cbe2ff;max-width:740px;margin:.6rem auto 1.6rem;line-height:1.6;font-size:1.02rem}
-.btn-primary{display:inline-block;background:linear-gradient(90deg,#0a6eff,#3ebaff);color:#fff;padding:13px 34px;border-radius:12px;font-weight:700;text-decoration:none;transition:.3s}
+.btn-primary{display:inline-block;background:linear-gradient(90deg,#0a6eff,#3ebaff);color:#fff;padding:13px 34px;border-radius:12px;font-weight:700;text-decoration:none;transition:.3s;margin-bottom:0}
 .btn-primary:hover{transform:translateY(-3px);box-shadow:0 0 24px rgba(80,180,255,.45)}
 
-/* subtle divider */
-.transition-line{width:100%;display:flex;justify-content:center;align-items:center;flex-direction:column;height:70px;margin:0 auto}
-.transition-line::before{content:"";width:2px;height:50px;background:linear-gradient(to bottom,rgba(80,160,255,.3),rgba(80,160,255,0));animation:lineFade 4s ease-in-out infinite}
+/* pulled flush */
+.transition-line{width:100%;display:flex;justify-content:center;align-items:center;flex-direction:column;height:60px;margin-top:-5px}
+.transition-line::before{content:"";width:2px;height:45px;background:linear-gradient(to bottom,rgba(80,160,255,.3),rgba(80,160,255,0));animation:lineFade 4s ease-in-out infinite}
 @keyframes lineFade{0%,100%{opacity:.5}50%{opacity:1}}
 .dot{width:6px;height:6px;border-radius:50%;background:#6ec7ff;margin-top:6px;opacity:.6;animation:dotPulse 2.4s infinite ease-in-out}
 .dot.delay{animation-delay:.4s}
 .dot.delay2{animation-delay:.8s}
 @keyframes dotPulse{0%,100%{transform:scale(.7);opacity:.4}50%{transform:scale(1.1);opacity:1}}
 
-/* panels */
 .panel{position:relative;z-index:2;max-width:920px;margin:3rem auto;padding:2.6rem 2.2rem;border-radius:22px;
 backdrop-filter:blur(22px) saturate(180%);
 background:rgba(15,25,40,.18) url('https://www.transparenttextures.com/patterns/stardust.png');
@@ -60,14 +41,12 @@ box-shadow:inset 0 0 25px rgba(70,130,255,.12),0 0 40px rgba(60,130,255,.25);
 opacity:0;transform:translateY(40px);transition:opacity 1s ease,transform 1s ease}
 .panel.visible{opacity:1;transform:translateY(0)}
 
-/* headers */
 .panel h2{text-align:center;font-size:1.9rem;font-weight:800;letter-spacing:.4px;
 background:linear-gradient(90deg,#a4e6ff,#e6f8ff,#a4e6ff);background-size:200% 100%;
 -webkit-background-clip:text;color:transparent;animation:headerShift 7s linear infinite;
 text-shadow:0 0 14px rgba(150,230,255,.8)}
 @keyframes headerShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
 
-/* dropdowns */
 details.drop{background:rgba(25,35,55,.25);border:1px solid rgba(110,170,255,.25);border-radius:14px;
 padding:1rem 1.2rem;margin-bottom:1rem;transition:.3s;backdrop-filter:blur(20px) saturate(150%)}
 details.drop summary{cursor:pointer;color:#a4d8ff;font-weight:600;font-size:1.03rem;display:flex;align-items:center;justify-content:space-between}
@@ -77,12 +56,10 @@ details.drop p,details.drop ol{margin-top:.6rem;color:#e1efff;font-size:.95rem;l
 .details-btn{margin-top:.8rem;display:inline-block;border:1px solid rgba(120,190,255,.6);border-radius:8px;padding:8px 16px;color:#b8e2ff;font-weight:600;text-decoration:none;transition:.3s}
 .details-btn:hover{background:rgba(125,190,255,.1);box-shadow:0 0 15px rgba(90,170,255,.3)}
 
-/* lists */
 .sources{margin:1rem 0 1rem 1.2rem;list-style-type:square;color:#b6d7ff}
 .sources li{margin:.35rem 0}
 .note{color:#9cb8dd;font-size:.88rem;text-align:center;margin-top:1rem;font-style:italic}
 
-/* footer */
 footer{text-align:center;padding:2.6rem 1rem 3.2rem;color:#a4c4ff;border-top:1px solid rgba(120,160,255,.25);
 background:rgba(0,0,0,.85);z-index:2;position:relative}
 footer p{font-size:.88rem;line-height:1.4;max-width:900px;margin:0 auto}
@@ -172,19 +149,17 @@ border-radius:8px;padding:8px 16px;font-weight:600;cursor:pointer;transition:.3s
 </section>
 
 <footer>
-  <p>© 2025 GridCore / ATRON Systems — MIT License • Version v9.6.8 Polaris • Verification Framework • Proof-Core Synced</p>
+  <p>© 2025 GridCore / ATRON Systems — MIT License • v9.6.9 Polaris • Verification Framework • Proof-Core Synced</p>
   <button id="scrollTop">↑ Back to Top</button>
 </footer>
 
 <script>
-/* mesh background */
 const c=document.getElementById("mesh-bg"),x=c.getContext("2d");
 let w,h,p=[];const N=95,D=165,S=.35;
 function R(){w=c.width=innerWidth;h=c.height=innerHeight;p=[];
 for(let i=0;i<N;i++)p.push({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*S,vy:(Math.random()-.5)*S,hue:180+Math.random()*60});}
 addEventListener("resize",R);R();
-function draw(){
-x.clearRect(0,0,w,h);
+function draw(){x.clearRect(0,0,w,h);
 const g=x.createRadialGradient(w/2,h/2,0,w/2,h/2,w);
 g.addColorStop(0,"#010712");g.addColorStop(1,"#000");
 x.fillStyle=g;x.fillRect(0,0,w,h);
@@ -195,28 +170,21 @@ if(d<D){const o=1-d/D;x.strokeStyle=`hsla(${a.hue},90%,70%,${o*.4})`;x.lineWidth
 const pulse=1.5+Math.sin(Date.now()/280+i)*.55;
 x.beginPath();x.arc(a.x,a.y,pulse,0,Math.PI*2);
 x.fillStyle=`hsla(${a.hue},100%,75%,0.85)`;x.fill();}
-requestAnimationFrame(draw);}
-draw();
+requestAnimationFrame(draw);}draw();
 
-/* fade observer fix */
+/* fade observer */
 const panels=document.querySelectorAll('.panel');
-const obs=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){e.target.classList.add('visible');}
-  });
-},{threshold:0.15});
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.15});
 panels.forEach(p=>obs.observe(p));
 
-/* back to top reliable fix */
-document.getElementById("scrollTop").addEventListener("click",()=>{
-  window.scroll({top:0,behavior:"smooth"});
-});
+/* Back to Top */
+document.getElementById("scrollTop").onclick=()=>{window.scrollTo({top:0,behavior:"smooth"});};
 
-/* reload start fix (iOS & desktop) */
+/* always start at top */
 window.history.scrollRestoration="manual";
+window.addEventListener("load",()=>{setTimeout(()=>{window.scrollTo(0,0);},30);});
+window.addEventListener("pageshow",()=>{setTimeout(()=>{window.scrollTo(0,0);},30);});
 window.addEventListener("beforeunload",()=>window.scrollTo(0,0));
-window.addEventListener("load",()=>{setTimeout(()=>window.scrollTo(0,0),50);});
-window.addEventListener("pageshow",()=>{setTimeout(()=>window.scrollTo(0,0),50);});
 </script>
 </body>
 </html>
