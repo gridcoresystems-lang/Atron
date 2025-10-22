@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>ATRON | Polaris v9.6.6</title>
+<title>ATRON | Polaris v9.6.7</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{height:100%;overflow-x:hidden;background:#000;font-family:'Inter',sans-serif;color:#d9e9ff;scroll-behavior:smooth}
@@ -15,7 +15,7 @@ body{animation:pageFade 1.4s ease-out}@keyframes pageFade{0%{opacity:0}100%{opac
   position:relative;z-index:2;text-align:center;
   min-height:92svh;display:flex;flex-direction:column;
   justify-content:flex-start;align-items:center;
-  padding-top:5vh;animation:fadeUp 1.2s ease-out forwards;
+  padding-top:4vh;animation:fadeUp 1.2s ease-out forwards;
 }
 @keyframes fadeUp{0%{opacity:0;transform:translateY(25px)}100%{opacity:1;transform:translateY(0)}}
 
@@ -32,21 +32,21 @@ animation:borderPulse 4s ease-in-out infinite}
 /* hero text */
 .subtitle{color:#b8e7ff;font-weight:600;font-size:1.1rem;margin-bottom:.5rem}
 .tagline{color:#d6f0ff;font-size:1rem;margin-top:-.2rem;margin-bottom:.8rem;opacity:.9}
-.desc{color:#cbe2ff;max-width:740px;margin:.6rem auto 1.6rem;line-height:1.6;font-size:1.02rem}
+.desc{color:#cbe2ff;max-width:740px;margin:.6rem auto 1rem;line-height:1.6;font-size:1.02rem}
 .btn-primary{display:inline-block;background:linear-gradient(90deg,#0a6eff,#3ebaff);color:#fff;padding:13px 34px;border-radius:12px;font-weight:700;text-decoration:none;transition:.3s}
 .btn-primary:hover{transform:translateY(-3px);box-shadow:0 0 24px rgba(80,180,255,.45)}
 
-/* transition divider */
-.transition-line{width:100%;display:flex;justify-content:center;align-items:center;flex-direction:column;height:80px;margin-top:10px}
-.transition-line::before{content:"";width:2px;height:60px;background:linear-gradient(to bottom,rgba(80,160,255,.3),rgba(80,160,255,0));animation:lineFade 4s ease-in-out infinite}
+/* divider removed gap to zero */
+.transition-line{width:100%;display:flex;justify-content:center;align-items:center;flex-direction:column;height:40px;margin-top:0}
+.transition-line::before{content:"";width:2px;height:40px;background:linear-gradient(to bottom,rgba(80,160,255,.3),rgba(80,160,255,0));animation:lineFade 4s ease-in-out infinite}
 @keyframes lineFade{0%,100%{opacity:.5}50%{opacity:1}}
-.dot{width:6px;height:6px;border-radius:50%;background:#6ec7ff;margin-top:6px;opacity:.6;animation:dotPulse 2.4s infinite ease-in-out}
+.dot{width:6px;height:6px;border-radius:50%;background:#6ec7ff;margin-top:4px;opacity:.6;animation:dotPulse 2.4s infinite ease-in-out}
 .dot.delay{animation-delay:.4s}
 .dot.delay2{animation-delay:.8s}
 @keyframes dotPulse{0%,100%{transform:scale(.7);opacity:.4}50%{transform:scale(1.1);opacity:1}}
 
 /* panels */
-.panel{position:relative;z-index:2;max-width:920px;margin:1.8rem auto;padding:2.4rem 2rem;border-radius:22px;
+.panel{position:relative;z-index:2;max-width:920px;margin:0 auto;padding:2.2rem 2rem;border-radius:22px;
 backdrop-filter:blur(22px) saturate(180%);
 background:rgba(15,25,40,.18) url('https://www.transparenttextures.com/patterns/stardust.png');
 border:1px solid rgba(100,160,255,.28);
@@ -84,7 +84,7 @@ footer p{font-size:.88rem;line-height:1.4;max-width:900px;margin:0 auto}
 border-radius:8px;padding:8px 16px;font-weight:600;cursor:pointer;transition:.3s}
 #scrollTop:hover{background:rgba(125,201,255,.1);box-shadow:0 0 15px rgba(90,160,255,.25)}
 
-@media(max-width:720px){.panel{margin:1.4rem 1rem;padding:1.6rem 1.2rem}h1{font-size:2.6rem}}
+@media(max-width:720px){.panel{padding:1.6rem 1.2rem}h1{font-size:2.6rem}}
 </style>
 </head>
 <body>
@@ -98,7 +98,6 @@ border-radius:8px;padding:8px 16px;font-weight:600;cursor:pointer;transition:.3s
   <a href="#overview" class="btn-primary">Begin Exploration</a>
 </section>
 
-<!-- Creative transition divider -->
 <div class="transition-line">
   <div class="dot"></div>
   <div class="dot delay"></div>
@@ -107,7 +106,7 @@ border-radius:8px;padding:8px 16px;font-weight:600;cursor:pointer;transition:.3s
 
 <section id="overview" class="panel">
   <h2>System Overview</h2>
-  <p style="margin-bottom:1.3rem;">ATRON merges adaptive reasoning, live-data fusion, and compression–expansion logic into one self-evolving structure. Each cycle ingests verified data, reconstructs logic paths, and cross-validates conclusions through its Council Engine.</p>
+  <p>ATRON merges adaptive reasoning, live-data fusion, and compression–expansion logic into one self-evolving structure. Each cycle ingests verified data, reconstructs logic paths, and cross-validates conclusions through its Council Engine.</p>
 
   <details class="drop"><summary>Core Architecture</summary>
     <p>The Continuity Lattice, Council Engine, and Brutal Push loops coordinate each reasoning cycle. Every layer checks data consistency before the next iteration begins.</p>
@@ -167,7 +166,7 @@ border-radius:8px;padding:8px 16px;font-weight:600;cursor:pointer;transition:.3s
 </section>
 
 <footer>
-  <p>© 2025 GridCore / ATRON Systems — MIT License • Version v9.6.6 Polaris • Verification Framework • Proof-Core Synced</p>
+  <p>© 2025 GridCore / ATRON Systems — MIT License • Version v9.6.7 Polaris • Verification Framework • Proof-Core Synced</p>
   <button id="scrollTop">↑ Back to Top</button>
 </footer>
 
@@ -193,7 +192,7 @@ x.fillStyle=`hsla(${a.hue},100%,75%,0.85)`;x.fill();}
 requestAnimationFrame(draw);}
 draw();
 
-/* smooth fade observer */
+/* fade observer */
 const panels=document.querySelectorAll('.panel');
 const obs=new IntersectionObserver(entries=>{
   entries.forEach(e=>{
@@ -201,7 +200,7 @@ const obs=new IntersectionObserver(entries=>{
       e.target.classList.add('visible');
     }
   });
-},{threshold:0.1});
+},{threshold:0.15});
 panels.forEach(p=>obs.observe(p));
 
 /* back to top */
@@ -209,9 +208,10 @@ document.getElementById("scrollTop").addEventListener("click",()=>{
   window.scrollTo({top:0,behavior:"smooth"});
 });
 
-/* force start at top */
-window.addEventListener("beforeunload",()=>window.scrollTo(0,0));
-window.addEventListener("pageshow",()=>window.scrollTo(0,0));
+/* true top reset */
+window.history.scrollRestoration="manual";
+window.addEventListener("load",()=>{setTimeout(()=>window.scrollTo(0,0),10);});
+window.addEventListener("pageshow",()=>{setTimeout(()=>window.scrollTo(0,0),10);});
 </script>
 </body>
 </html>
