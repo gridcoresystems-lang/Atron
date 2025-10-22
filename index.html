@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>ATRON | Polaris v9.6.7</title>
+<title>ATRON | Polaris v9.6.8</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{height:100%;overflow-x:hidden;background:#000;font-family:'Inter',sans-serif;color:#d9e9ff;scroll-behavior:smooth}
@@ -12,10 +12,16 @@ body{animation:pageFade 1.4s ease-out}@keyframes pageFade{0%{opacity:0}100%{opac
 
 /* hero */
 .hero{
-  position:relative;z-index:2;text-align:center;
-  min-height:92svh;display:flex;flex-direction:column;
-  justify-content:flex-start;align-items:center;
-  padding-top:4vh;animation:fadeUp 1.2s ease-out forwards;
+  position:relative;
+  z-index:2;
+  text-align:center;
+  min-height:92svh;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  align-items:center;
+  padding-top:6vh;
+  animation:fadeUp 1.2s ease-out forwards;
 }
 @keyframes fadeUp{0%{opacity:0;transform:translateY(25px)}100%{opacity:1;transform:translateY(0)}}
 
@@ -32,21 +38,21 @@ animation:borderPulse 4s ease-in-out infinite}
 /* hero text */
 .subtitle{color:#b8e7ff;font-weight:600;font-size:1.1rem;margin-bottom:.5rem}
 .tagline{color:#d6f0ff;font-size:1rem;margin-top:-.2rem;margin-bottom:.8rem;opacity:.9}
-.desc{color:#cbe2ff;max-width:740px;margin:.6rem auto 1rem;line-height:1.6;font-size:1.02rem}
+.desc{color:#cbe2ff;max-width:740px;margin:.6rem auto 1.6rem;line-height:1.6;font-size:1.02rem}
 .btn-primary{display:inline-block;background:linear-gradient(90deg,#0a6eff,#3ebaff);color:#fff;padding:13px 34px;border-radius:12px;font-weight:700;text-decoration:none;transition:.3s}
 .btn-primary:hover{transform:translateY(-3px);box-shadow:0 0 24px rgba(80,180,255,.45)}
 
-/* divider removed gap to zero */
-.transition-line{width:100%;display:flex;justify-content:center;align-items:center;flex-direction:column;height:40px;margin-top:0}
-.transition-line::before{content:"";width:2px;height:40px;background:linear-gradient(to bottom,rgba(80,160,255,.3),rgba(80,160,255,0));animation:lineFade 4s ease-in-out infinite}
+/* subtle divider */
+.transition-line{width:100%;display:flex;justify-content:center;align-items:center;flex-direction:column;height:70px;margin:0 auto}
+.transition-line::before{content:"";width:2px;height:50px;background:linear-gradient(to bottom,rgba(80,160,255,.3),rgba(80,160,255,0));animation:lineFade 4s ease-in-out infinite}
 @keyframes lineFade{0%,100%{opacity:.5}50%{opacity:1}}
-.dot{width:6px;height:6px;border-radius:50%;background:#6ec7ff;margin-top:4px;opacity:.6;animation:dotPulse 2.4s infinite ease-in-out}
+.dot{width:6px;height:6px;border-radius:50%;background:#6ec7ff;margin-top:6px;opacity:.6;animation:dotPulse 2.4s infinite ease-in-out}
 .dot.delay{animation-delay:.4s}
 .dot.delay2{animation-delay:.8s}
 @keyframes dotPulse{0%,100%{transform:scale(.7);opacity:.4}50%{transform:scale(1.1);opacity:1}}
 
 /* panels */
-.panel{position:relative;z-index:2;max-width:920px;margin:0 auto;padding:2.2rem 2rem;border-radius:22px;
+.panel{position:relative;z-index:2;max-width:920px;margin:3rem auto;padding:2.6rem 2.2rem;border-radius:22px;
 backdrop-filter:blur(22px) saturate(180%);
 background:rgba(15,25,40,.18) url('https://www.transparenttextures.com/patterns/stardust.png');
 border:1px solid rgba(100,160,255,.28);
@@ -77,14 +83,14 @@ details.drop p,details.drop ol{margin-top:.6rem;color:#e1efff;font-size:.95rem;l
 .note{color:#9cb8dd;font-size:.88rem;text-align:center;margin-top:1rem;font-style:italic}
 
 /* footer */
-footer{text-align:center;padding:2rem 1rem 3rem;color:#a4c4ff;border-top:1px solid rgba(120,160,255,.25);
+footer{text-align:center;padding:2.6rem 1rem 3.2rem;color:#a4c4ff;border-top:1px solid rgba(120,160,255,.25);
 background:rgba(0,0,0,.85);z-index:2;position:relative}
 footer p{font-size:.88rem;line-height:1.4;max-width:900px;margin:0 auto}
 #scrollTop{margin-top:1rem;border:1px solid #7dc9ff;background:transparent;color:#7dc9ff;
 border-radius:8px;padding:8px 16px;font-weight:600;cursor:pointer;transition:.3s}
 #scrollTop:hover{background:rgba(125,201,255,.1);box-shadow:0 0 15px rgba(90,160,255,.25)}
 
-@media(max-width:720px){.panel{padding:1.6rem 1.2rem}h1{font-size:2.6rem}}
+@media(max-width:720px){.panel{margin:2rem 1rem;padding:1.6rem 1.2rem}h1{font-size:2.6rem}}
 </style>
 </head>
 <body>
@@ -166,12 +172,12 @@ border-radius:8px;padding:8px 16px;font-weight:600;cursor:pointer;transition:.3s
 </section>
 
 <footer>
-  <p>© 2025 GridCore / ATRON Systems — MIT License • Version v9.6.7 Polaris • Verification Framework • Proof-Core Synced</p>
+  <p>© 2025 GridCore / ATRON Systems — MIT License • Version v9.6.8 Polaris • Verification Framework • Proof-Core Synced</p>
   <button id="scrollTop">↑ Back to Top</button>
 </footer>
 
 <script>
-/* mesh */
+/* mesh background */
 const c=document.getElementById("mesh-bg"),x=c.getContext("2d");
 let w,h,p=[];const N=95,D=165,S=.35;
 function R(){w=c.width=innerWidth;h=c.height=innerHeight;p=[];
@@ -192,26 +198,25 @@ x.fillStyle=`hsla(${a.hue},100%,75%,0.85)`;x.fill();}
 requestAnimationFrame(draw);}
 draw();
 
-/* fade observer */
+/* fade observer fix */
 const panels=document.querySelectorAll('.panel');
 const obs=new IntersectionObserver(entries=>{
   entries.forEach(e=>{
-    if(e.isIntersecting&&!e.target.classList.contains('visible')){
-      e.target.classList.add('visible');
-    }
+    if(e.isIntersecting){e.target.classList.add('visible');}
   });
 },{threshold:0.15});
 panels.forEach(p=>obs.observe(p));
 
-/* back to top */
+/* back to top reliable fix */
 document.getElementById("scrollTop").addEventListener("click",()=>{
-  window.scrollTo({top:0,behavior:"smooth"});
+  window.scroll({top:0,behavior:"smooth"});
 });
 
-/* true top reset */
+/* reload start fix (iOS & desktop) */
 window.history.scrollRestoration="manual";
-window.addEventListener("load",()=>{setTimeout(()=>window.scrollTo(0,0),10);});
-window.addEventListener("pageshow",()=>{setTimeout(()=>window.scrollTo(0,0),10);});
+window.addEventListener("beforeunload",()=>window.scrollTo(0,0));
+window.addEventListener("load",()=>{setTimeout(()=>window.scrollTo(0,0),50);});
+window.addEventListener("pageshow",()=>{setTimeout(()=>window.scrollTo(0,0),50);});
 </script>
 </body>
 </html>
