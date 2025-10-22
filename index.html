@@ -3,136 +3,91 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>ATRON | Polaris v9.7.2</title>
+<title>ATRON | Polaris v9.6.3</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-html,body{
-  height:100%;
-  overflow-x:hidden;
-  background:#000;
-  font-family:'Inter',sans-serif;
-  color:#d9e9ff;
-  scroll-behavior:smooth;
-}
-#mesh-bg{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;background:#000}
-body{animation:pageFade 1.6s ease-out}@keyframes pageFade{0%{opacity:0}100%{opacity:1}}
+html,body{height:100%;overflow-x:hidden;background:#000;font-family:'Inter',sans-serif;color:#d9e9ff;scroll-behavior:smooth}
+#mesh-bg{position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:0;pointer-events:none;background:#000}
+body{animation:pageFade 2s ease-out}@keyframes pageFade{0%{opacity:0}100%{opacity:1}}
 
 /* hero */
-.hero{
-  position:relative;
-  z-index:2;
-  text-align:center;
-  min-height:92svh;
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-start;
-  align-items:center;
-  padding-top:6vh;
-  animation:fadeUp 1.3s ease-out forwards;
-}
-@keyframes fadeUp{0%{opacity:0;transform:translateY(25px)}100%{opacity:1;transform:translateY(0)}}
+.hero{position:relative;z-index:2;text-align:center;padding:10vh 6% 10vh;animation:fadeUp 1.4s ease-out forwards}
+@keyframes fadeUp{0%{opacity:0;transform:translateY(30px)}100%{opacity:1;transform:translateY(0)}}
 
-.title-wrap{position:relative;display:inline-block;padding:.2rem .8rem;margin-bottom:14px}
-h1{font-size:3.4rem;font-weight:800;letter-spacing:.8px;color:#bfeaff;text-shadow:0 0 14px rgba(120,200,255,.8),0 0 30px rgba(70,150,255,.35)}
+/* ATRON title */
+.title-wrap{position:relative;display:inline-block;padding:.2rem .8rem;margin-bottom:20px}
+h1{font-size:3.6rem;font-weight:800;letter-spacing:.8px;color:#bfeaff;text-shadow:0 0 14px rgba(120,200,255,.8),0 0 30px rgba(70,150,255,.35)}
 .title-wrap::before{
-  content:"";position:absolute;top:-6px;left:-14px;right:-14px;bottom:-6px;
-  border-radius:16px;border:3px solid rgba(45,95,150,.9);
-  box-shadow:0 0 10px rgba(45,95,150,.7),inset 0 0 6px rgba(60,130,200,.3);
-  animation:borderPulse 4s ease-in-out infinite;
-}
-@keyframes borderPulse{
-  0%,100%{box-shadow:0 0 10px rgba(45,95,150,.7),inset 0 0 6px rgba(60,130,200,.3)}
-  50%{box-shadow:0 0 18px rgba(80,160,255,.9),inset 0 0 10px rgba(100,200,255,.5)}
-}
-.subtitle{color:#b8e7ff;font-weight:600;font-size:1.1rem;margin-bottom:.5rem}
-.tagline{color:#d6f0ff;font-size:1rem;margin-top:-.2rem;margin-bottom:.8rem;opacity:.9}
-.desc{color:#cbe2ff;max-width:740px;margin:.6rem auto 1.6rem;line-height:1.6;font-size:1.02rem}
-.btn-primary{
-  display:inline-block;background:linear-gradient(90deg,#0a6eff,#3ebaff);
-  color:#fff;padding:13px 34px;border-radius:12px;font-weight:700;text-decoration:none;transition:.3s;
-}
+content:"";position:absolute;top:-6px;left:-14px;right:-14px;bottom:-6px;
+border-radius:16px;border:3px solid rgba(45,95,150,.9);
+box-shadow:0 0 10px rgba(45,95,150,.7),inset 0 0 6px rgba(60,130,200,.3);
+animation:borderPulse 4s ease-in-out infinite}
+@keyframes borderPulse{0%,100%{box-shadow:0 0 10px rgba(45,95,150,.7),inset 0 0 6px rgba(60,130,200,.3)}
+50%{box-shadow:0 0 18px rgba(80,160,255,.9),inset 0 0 10px rgba(100,200,255,.5)}}
+
+/* hero text */
+.subtitle{color:#b8e7ff;font-weight:600;font-size:1.15rem;margin-bottom:.6rem}
+.tagline{color:#d6f0ff;font-size:1rem;margin-top:-.2rem;margin-bottom:1rem;opacity:.9}
+.desc{color:#cbe2ff;max-width:740px;margin:.8rem auto 2.4rem;line-height:1.6;font-size:1.05rem}
+.btn-primary{display:inline-block;background:linear-gradient(90deg,#0a6eff,#3ebaff);color:#fff;padding:14px 38px;border-radius:12px;font-weight:700;text-decoration:none;transition:.3s}
 .btn-primary:hover{transform:translateY(-3px);box-shadow:0 0 24px rgba(80,180,255,.45)}
 
-/* transition line flush */
-.transition-line{
-  width:100%;display:flex;justify-content:center;align-items:center;flex-direction:column;
-  height:60px;margin-top:4px;margin-bottom:0;
-}
-.transition-line::before{
-  content:"";width:2px;height:45px;
-  background:linear-gradient(to bottom,rgba(80,160,255,.3),rgba(80,160,255,0));
-  animation:lineFade 4s ease-in-out infinite;
-}
-@keyframes lineFade{0%,100%{opacity:.5}50%{opacity:1}}
-.dot{width:6px;height:6px;border-radius:50%;background:#6ec7ff;margin-top:6px;opacity:.6;animation:dotPulse 2.4s infinite ease-in-out}
-.dot.delay{animation-delay:.4s}
-.dot.delay2{animation-delay:.8s}
-@keyframes dotPulse{0%,100%{transform:scale(.7);opacity:.4}50%{transform:scale(1.1);opacity:1}}
-
 /* panels */
-.panel{
-  position:relative;
-  z-index:2;
-  max-width:920px;
-  margin:0 auto 3rem;
-  padding:2.6rem 2.2rem;
-  border-radius:22px;
-  backdrop-filter:blur(22px) saturate(180%);
-  background:rgba(15,25,40,.18);
-  border:1px solid rgba(100,160,255,.28);
-  box-shadow:inset 0 0 25px rgba(70,130,255,.12),0 0 40px rgba(60,130,255,.25);
-  opacity:0;transform:translateY(40px);transition:opacity 1s ease,transform 1s ease;
-}
+.panel{position:relative;z-index:2;max-width:920px;margin:4rem auto;padding:2.8rem 2.2rem;border-radius:22px;
+backdrop-filter:blur(22px) saturate(180%);
+background:rgba(15,25,40,.18) url('https://www.transparenttextures.com/patterns/stardust.png');
+border:1px solid rgba(100,160,255,.28);
+box-shadow:inset 0 0 25px rgba(70,130,255,.12),0 0 40px rgba(60,130,255,.25);
+opacity:0;transform:translateY(40px);transition:opacity 1s ease,transform 1s ease}
 .panel.visible{opacity:1;transform:translateY(0)}
-.panel h2{
-  text-align:center;font-size:1.9rem;font-weight:800;
-  background:linear-gradient(90deg,#a4e6ff,#e6f8ff,#a4e6ff);
-  -webkit-background-clip:text;color:transparent;
-  animation:headerShift 7s linear infinite;
-  text-shadow:0 0 14px rgba(150,230,255,.8);
-}
+
+/* headers */
+.panel h2{text-align:center;font-size:2rem;font-weight:800;letter-spacing:.4px;
+background:linear-gradient(90deg,#a4e6ff,#e6f8ff,#a4e6ff);background-size:200% 100%;
+-webkit-background-clip:text;color:transparent;animation:headerShift 7s linear infinite;
+text-shadow:0 0 14px rgba(150,230,255,.8)}
 @keyframes headerShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
-details.drop{
-  background:rgba(25,35,55,.25);border:1px solid rgba(110,170,255,.25);border-radius:14px;
-  padding:1rem 1.2rem;margin-bottom:1rem;transition:.3s;
-}
-details.drop summary{
-  cursor:pointer;color:#a4d8ff;font-weight:600;font-size:1.03rem;
-  display:flex;align-items:center;justify-content:space-between;
-}
-details.drop summary::after{
-  content:"▼";font-size:.8rem;margin-left:8px;color:#7fc9ff;
-  transition:transform .3s ease,color .3s ease;
-}
+
+/* dropdowns */
+details.drop{background:rgba(25,35,55,.25);border:1px solid rgba(110,170,255,.25);border-radius:14px;
+padding:1rem 1.2rem;margin-bottom:1.4rem;transition:.3s;backdrop-filter:blur(20px) saturate(150%)}
+details.drop summary{cursor:pointer;color:#a4d8ff;font-weight:600;font-size:1.05rem;display:flex;align-items:center;justify-content:space-between}
+details.drop summary::after{content:"▼";font-size:.8rem;margin-left:8px;color:#7fc9ff;transition:transform .3s ease,color .3s ease}
 details.drop[open] summary::after{transform:rotate(180deg);color:#bde6ff}
-details.drop p{margin-top:.6rem;color:#e1efff;font-size:.95rem;line-height:1.6}
-footer{text-align:center;padding:2.6rem 1rem 3.2rem;color:#a4c4ff;border-top:1px solid rgba(120,160,255,.25);
+details.drop p,details.drop ol{margin-top:.8rem;color:#e1efff;font-size:.96rem;line-height:1.6}
+.details-btn{margin-top:.9rem;display:inline-block;border:1px solid rgba(120,190,255,.6);border-radius:8px;padding:8px 16px;color:#b8e2ff;font-weight:600;text-decoration:none;transition:.3s}
+.details-btn:hover{background:rgba(125,190,255,.1);box-shadow:0 0 15px rgba(90,170,255,.3)}
+
+/* lists */
+.sources{margin:1rem 0 1rem 1.2rem;list-style-type:square;color:#b6d7ff}
+.sources li{margin:.45rem 0}
+.note{color:#9cb8dd;font-size:.9rem;text-align:center;margin-top:1rem;font-style:italic}
+
+/* footer */
+footer{text-align:center;padding:3rem 1rem 4rem;color:#a4c4ff;border-top:1px solid rgba(120,160,255,.25);
 background:rgba(0,0,0,.85);z-index:2;position:relative}
+footer p{font-size:.9rem;line-height:1.4;max-width:900px;margin:0 auto}
 #scrollTop{margin-top:1rem;border:1px solid #7dc9ff;background:transparent;color:#7dc9ff;
 border-radius:8px;padding:8px 16px;font-weight:600;cursor:pointer;transition:.3s}
 #scrollTop:hover{background:rgba(125,201,255,.1);box-shadow:0 0 15px rgba(90,160,255,.25)}
-@media(max-width:720px){.panel{margin:1.8rem 1rem;padding:1.6rem 1.2rem}h1{font-size:2.6rem}}
+
+@media(max-width:720px){.panel{margin:2rem 1rem;padding:1.8rem 1.4rem}h1{font-size:2.5rem}}
 </style>
 </head>
 <body>
 <canvas id="mesh-bg"></canvas>
 
-<section class="hero" id="top">
+<section class="hero">
   <div class="title-wrap"><h1>ATRON</h1></div>
   <p class="tagline">Adaptive AI framework for self-evolving data reasoning</p>
   <p class="subtitle">Autonomous Truth Reasoning & Observation Network</p>
   <p class="desc">A living intelligence lattice that verifies logic dynamically and fuses real research in real time.<br><em>Built by GridCore Systems · 2025</em></p>
   <a href="#overview" class="btn-primary">Begin Exploration</a>
-  <div class="transition-line">
-    <div class="dot"></div>
-    <div class="dot delay"></div>
-    <div class="dot delay2"></div>
-  </div>
 </section>
 
 <section id="overview" class="panel">
   <h2>System Overview</h2>
-  <p>ATRON merges adaptive reasoning, live-data fusion, and compression–expansion logic into one self-evolving structure. Each cycle ingests verified data, reconstructs logic paths, and cross-validates conclusions through its Council Engine.</p>
+  <p style="margin-bottom:1.6rem;">ATRON merges adaptive reasoning, live-data fusion, and compression–expansion logic into one self-evolving structure. Each cycle ingests verified data, reconstructs logic paths, and cross-validates conclusions through its Council Engine.</p>
 
   <details class="drop"><summary>Core Architecture</summary>
     <p>The Continuity Lattice, Council Engine, and Brutal Push loops coordinate each reasoning cycle. Every layer checks data consistency before the next iteration begins.</p>
@@ -192,7 +147,7 @@ border-radius:8px;padding:8px 16px;font-weight:600;cursor:pointer;transition:.3s
 </section>
 
 <footer>
-  <p>© 2025 GridCore / ATRON Systems — MIT License • Version v9.7.2 Polaris • Verification Framework • Proof-Core Synced</p>
+  <p>© 2025 GridCore / ATRON Systems — MIT License • Version v9.6.3 Polaris • Verification Framework • Proof-Core Synced</p>
   <button id="scrollTop">↑ Back to Top</button>
 </footer>
 
@@ -218,19 +173,22 @@ x.fillStyle=`hsla(${a.hue},100%,75%,0.9)`;x.fill();}
 requestAnimationFrame(draw);}
 draw();
 
-/* fade observer */
+/* continuous fade panels */
 const panels=document.querySelectorAll('.panel');
-const obs=new IntersectionObserver(e=>{e.forEach(v=>{if(v.isIntersecting)v.target.classList.add('visible');});},{threshold:0.1});
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){e.target.classList.add('visible');}
+    else{e.target.classList.remove('visible');}
+  });
+},{threshold:0.15});
 panels.forEach(p=>obs.observe(p));
 
-/* back to top */
-document.getElementById("scrollTop").addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}));
-
-/* always start at top (fix sticky refresh) */
-window.history.scrollRestoration="manual";
-window.addEventListener("load",()=>window.scrollTo(0,0));
-window.addEventListener("pageshow",()=>window.scrollTo(0,0));
-window.addEventListener("beforeunload",()=>window.scrollTo(0,0));
+/* Back to top — full cross-browser fix */
+document.getElementById("scrollTop").addEventListener("click",()=>{
+  window.scrollTo({top:0,behavior:"smooth"});
+  document.body.scrollTop=0;
+  document.documentElement.scrollTop=0;
+});
 </script>
 </body>
 </html>
